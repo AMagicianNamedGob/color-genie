@@ -2,7 +2,7 @@ export default function Home() {
   return (
     <main className="min-h-screen p-24">
       <h1 className="font-bold text-center"> Pallet Demo</h1>
-      <div className="grid grid-cols-2 mt-9 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-9 gap-4">
+      <div className="grid grid-cols-1 mt-9 md:grid-cols-3 xl:grid-cols-9 gap-4">
         <span>
           <div
             className={`bg-primary-100 border-2 border-white rounded-lg p-10`}
@@ -58,7 +58,7 @@ export default function Home() {
           <p className="text-xl text-center capitalize py-2">primary-900</p>
         </span>
       </div>
-      <div className="grid grid-cols-2 mt-9 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-9 gap-4">
+      <div className="grid grid-cols-1 mt-9 md:grid-cols-3 xl:grid-cols-9 gap-4">
         <span>
           <div
             className={`bg-secondary-100 border-2 border-white rounded-lg p-10`}
@@ -114,7 +114,7 @@ export default function Home() {
           <p className="text-xl text-center capitalize py-2">secondary-900</p>
         </span>
       </div>
-      <div className="grid grid-cols-2 mt-9 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-9 gap-4">
+      <div className="grid grid-cols-1 mt-9 md:grid-cols-3 xl:grid-cols-9 gap-4">
         <span>
           <div
             className={`bg-accent-1 border-2 border-white rounded-lg p-10`}
@@ -151,6 +151,7 @@ export default function Home() {
           ></div>
           <p className="text-xl text-center capitalize py-2">accent-6</p>
         </span>
+
       </div>
     </main>
   );

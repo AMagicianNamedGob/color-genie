@@ -39,15 +39,15 @@
       var(--primary-color-s) calc(var(--primary-color-l) + var(--lighten));
 
     --color-secondary--lighter: calc(var(--primary-color-h) + 180)
-      var(--primary-color-s) calc(var(--primary-color-l) + var(--lighten) * 1.33);
+      var(--primary-color-s)
+      calc(var(--primary-color-l) + var(--lighten) * 1.33);
 
     --color-secondary--lightest: calc(var(--primary-color-h) + 180)
       var(--primary-color-s)
       calc(var(--primary-color-l) + var(--lighten) * 1.66);
 
     --color-secondary--max-light: calc(var(--primary-color-h) + 180)
-      var(--primary-color-s)
-      calc(var(--primary-color-l) + var(--lighten) * 2);
+      var(--primary-color-s) calc(var(--primary-color-l) + var(--lighten) * 2);
 
     --color-secondary--dark: calc(var(--primary-color-h) + 180)
       var(--primary-color-s) calc(var(--primary-color-l) + var(--darken));
@@ -65,28 +65,28 @@
     --color-accent-1: calc(var(--primary-color-h) + 30) var(--primary-color-s)
       var(--primary-color-l);
 
-    --color-accent-2: calc(var(--primary-color-h) + 90) var(--primary-color-s)
+    --color-accent-2: calc(var(--primary-color-h) + 60) var(--primary-color-s)
       var(--primary-color-l);
 
-    --color-accent-3: calc(var(--primary-color-h) + 180 + 30)
-      var(--primary-color-s) var(--primary-color-l);
-
-    --color-accent-4: calc(var(--primary-color-h) - 30) var(--primary-color-s)
+    --color-accent-3: calc(var(--primary-color-h) + 90) var(--primary-color-s)
       var(--primary-color-l);
 
-    --color-accent-5: calc(var(--primary-color-h) - 90) var(--primary-color-s)
+    --color-accent-4: calc(var(--primary-color-h) - 90) var(--primary-color-s)
       var(--primary-color-l);
 
-    --color-accent-6: calc(var(--primary-color-h) + 180 - 30)
-      var(--primary-color-s) var(--primary-color-l);
+    --color-accent-5: calc(var(--primary-color-h) - 60) var(--primary-color-s)
+      var(--primary-color-l);
+
+    --color-accent-6: calc(var(--primary-color-h) - 30) var(--primary-color-s)
+      var(--primary-color-l);
 
     /* generate primary and secondary colors*/
-    --primary-color-h: 190;
-    --primary-color-s: 35%;
-    --primary-color-l: 65%;
+    --primary-color-h: 15;
+    --primary-color-s: 65%;
+    --primary-color-l: 35%;
     --lighten: 10%;
     --darken: -10%;
-    --color-white: 20deg 33% 95%;
+    --color-white: 0deg 0% 100%;
   }
 
   html,
@@ -95,7 +95,7 @@
   }
 
   body {
-    @apply bg-primary-900 text-secondary-100 text-base p-0 px-5 leading-6;
+    @apply bg-black text-white text-base p-0 px-5 leading-6;
   }
 
   h1,
@@ -110,7 +110,7 @@
   .h5,
   h6,
   .h6 {
-    @apply font-bold leading-none tracking-wide text-secondary-100;
+    @apply font-bold leading-none tracking-wide text-white;
   }
   h1,
   .h1 {

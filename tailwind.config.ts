@@ -38,6 +38,7 @@ module.exports = {
       "accent-4": "hsl(var(--color-accent-4) / 1)",
       "accent-5": "hsl(var(--color-accent-5) / 1)",
       "accent-6": "hsl(var(--color-accent-6) / 1)",
+
       white: "hsl(var(--color-white) / 1)",
       black: colors.black,
       slate: colors.slate,
