@@ -1,27 +1,148 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
+    /* primary */
+    --color-primary: var(--primary-color-h) var(--primary-color-s)
+      var(--primary-color-l);
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    --color-primary--light: var(--primary-color-h) var(--primary-color-s)
+      calc(var(--primary-color-l) + var(--lighten));
+
+    --color-primary--lighter: var(--primary-color-h) var(--primary-color-s)
+      calc(var(--primary-color-l) + var(--lighten) * 1.33);
+
+    --color-primary--lightest: var(--primary-color-h) var(--primary-color-s)
+      calc(var(--primary-color-l) + var(--lighten) * 1.66);
+
+    --color-primary--max-light: var(--primary-color-h) var(--primary-color-s)
+      calc(var(--primary-color-l) + var(--lighten) * 2);
+
+    --color-primary--dark: var(--primary-color-h) var(--primary-color-s)
+      calc(var(--primary-color-l) + var(--darken));
+
+    --color-primary--darker: var(--primary-color-h) var(--primary-color-s)
+      calc(var(--primary-color-l) + var(--darken) * 1.33);
+
+    --color-primary--darkest: var(--primary-color-h) var(--primary-color-s)
+      calc(var(--primary-color-l) + var(--darken) * 1.66);
+
+    --color-primary--max-dark: var(--primary-color-h) var(--primary-color-s)
+      calc(var(--primary-color-l) + var(--darken) * 2);
+
+    /* secondary */
+    --color-secondary: calc(var(--primary-color-h) + 180) var(--primary-color-s)
+      var(--primary-color-l);
+
+    --color-secondary--light: calc(var(--primary-color-h) + 180)
+      var(--primary-color-s) calc(var(--primary-color-l) + var(--lighten));
+
+    --color-secondary--lighter: calc(var(--primary-color-h) + 180)
+      var(--primary-color-s) calc(var(--primary-color-l) + var(--lighten) * 1.33);
+
+    --color-secondary--lightest: calc(var(--primary-color-h) + 180)
+      var(--primary-color-s)
+      calc(var(--primary-color-l) + var(--lighten) * 1.66);
+
+    --color-secondary--max-light: calc(var(--primary-color-h) + 180)
+      var(--primary-color-s)
+      calc(var(--primary-color-l) + var(--lighten) * 2);
+
+    --color-secondary--dark: calc(var(--primary-color-h) + 180)
+      var(--primary-color-s) calc(var(--primary-color-l) + var(--darken));
+
+    --color-secondary--darker: calc(var(--primary-color-h) + 180)
+      var(--primary-color-s) calc(var(--primary-color-l) + var(--darken) * 1.33);
+
+    --color-secondary--darkest: calc(var(--primary-color-h) + 180)
+      var(--primary-color-s) calc(var(--primary-color-l) + var(--darken) * 1.66);
+
+    --color-secondary--max-dark: calc(var(--primary-color-h) + 180)
+      var(--primary-color-s) calc(var(--primary-color-l) + var(--darken) * 2);
+
+    /* accents -- these may need tweaked */
+    --color-accent-1: calc(var(--primary-color-h) + 30) var(--primary-color-s)
+      var(--primary-color-l);
+
+    --color-accent-2: calc(var(--primary-color-h) + 90) var(--primary-color-s)
+      var(--primary-color-l);
+
+    --color-accent-3: calc(var(--primary-color-h) + 180 + 30)
+      var(--primary-color-s) var(--primary-color-l);
+
+    --color-accent-4: calc(var(--primary-color-h) - 30) var(--primary-color-s)
+      var(--primary-color-l);
+
+    --color-accent-5: calc(var(--primary-color-h) - 90) var(--primary-color-s)
+      var(--primary-color-l);
+
+    --color-accent-6: calc(var(--primary-color-h) + 180 - 30)
+      var(--primary-color-s) var(--primary-color-l);
+
+    /* generate primary and secondary colors*/
+    --primary-color-h: 190;
+    --primary-color-s: 35%;
+    --primary-color-l: 65%;
+    --lighten: 10%;
+    --darken: -10%;
+    --color-white: 20deg 33% 95%;
+  }
+
+  html,
+  body {
+    @apply min-h-screen;
+  }
+
+  body {
+    @apply bg-primary-900 text-secondary-100 text-base p-0 px-5 leading-6;
+  }
+
+  h1,
+  .h1,
+  h2,
+  .h2,
+  h3,
+  .h3,
+  h4,
+  .h4,
+  h5,
+  .h5,
+  h6,
+  .h6 {
+    @apply font-bold leading-none tracking-wide text-secondary-100;
+  }
+  h1,
+  .h1 {
+    @apply text-5xl;
+  }
+  h2,
+  .h2 {
+    @apply text-4xl;
+  }
+  h3,
+  .h3 {
+    @apply text-3xl leading-relaxed;
+  }
+  h4,
+  .h4 {
+    @apply text-2xl leading-relaxed font-light;
+  }
+  h5,
+  .h5 {
+    @apply text-lg uppercase leading-relaxed tracking-wide font-light;
+  }
+  h6,
+  .h6 {
+    @apply text-base uppercase leading-relaxed tracking-wide font-light;
+  }
+
+  a {
+    @apply text-secondary-500 underline underline-offset-2 opacity-80 transition-all duration-200 ease-in-out;
+  }
+
+  button,
+  .button {
+    @apply bg-primary-500 text-secondary-200 border-2 border-secondary-200 rounded-md py-3 px-5 transition-all duration-200 ease-in-out hover:cursor-pointer;
+  }
 }
