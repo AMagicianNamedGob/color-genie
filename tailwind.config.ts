@@ -46,5 +46,12 @@ module.exports = {
       gray: colors.neutral,
     },
   },
+  safelist: [
+    {
+      pattern:
+        /((bg|text)-(primary|secondary)-(100|200|300|400|500|600|700|800|900))|accent-(1|2|3|4|5|6)/,
+    },
+  ],
+
   plugins: [],
-}
+};

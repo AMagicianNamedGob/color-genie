@@ -81,9 +81,9 @@
       var(--primary-color-l);
 
     /* generate primary and secondary colors*/
-    --primary-color-h: 15;
-    --primary-color-s: 65%;
-    --primary-color-l: 35%;
+    --primary-color-h: 220;
+    --primary-color-s: 70%;
+    --primary-color-l: 45%;
     --lighten: 10%;
     --darken: -10%;
     --color-white: 0deg 0% 100%;
