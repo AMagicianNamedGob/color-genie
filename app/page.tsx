@@ -1,5 +1,5 @@
-import Blot from "./Blot";
-import Form from "./Form";
+import Blot from "./components/Blot";
+import Form from "./components/Form";
 
 export default function Home() {
   return (

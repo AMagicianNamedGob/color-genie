@@ -5,7 +5,7 @@
   :root {
     /* primary */
     --color-primary: var(--primary-color-h) var(--primary-color-s)
-      var(--primary-color-l);
+      calc(var(--primary-color-l) + var(--lighten) + var(--darken));
 
     --color-primary--light: var(--primary-color-h) var(--primary-color-s)
       calc(var(--primary-color-l) + var(--lighten));
@@ -33,7 +33,7 @@
 
     /* secondary */
     --color-secondary: calc(var(--primary-color-h) + 180) var(--primary-color-s)
-      var(--primary-color-l);
+      calc(var(--primary-color-l) + var(--lighten) + var(--darken));
 
     --color-secondary--light: calc(var(--primary-color-h) + 180)
       var(--primary-color-s) calc(var(--primary-color-l) + var(--lighten));
@@ -80,14 +80,9 @@
     --color-accent-6: calc(var(--primary-color-h) - 30) var(--primary-color-s)
       var(--primary-color-l);
 
-    /* generate primary and secondary colors*/
-    /* 30 - 70 keep at 10% */
-    /* 10 - 29 and 71 - 90 at 5%*/
-    /* < 10 and > 90 at 1% */
-    /* step factor 1, 3, 5, 10, 15 */
-    --primary-color-h: 220;
-    --primary-color-s: 70%;
-    --primary-color-l: 45%;
+    --primary-color-h: 180%;
+    --primary-color-s: 50%;
+    --primary-color-l: 50%;
     --lighten: 10%;
     --darken: -10%;
     --color-white: 0deg 0% 100%;
