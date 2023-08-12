@@ -1,30 +1,41 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { HslColorPicker } from "react-colorful";
+import ThemeToggle from "./ThemeToggle";
+import clsx from "clsx";
+import { useDebouncyEffect } from "use-debouncy";
+import { HexColorPicker, HexColorInput } from "react-colorful";
+import hexToHSL from "../lib/hexToHsl";
+
+import styles from "./styles/Form.module.css";
 
 export default function Form() {
-  const [color, setColor] = useState({ h: 180, s: 50, l: 50 });
-  const [colorRangeLight, setColorRangeLight] = useState("10");
-  const [colorRangeDark, setColorRangeDark] = useState("10");
+  const [hexColor, setHexColor] = useState("#40bfbf");
+  const [hexColorEffect, setHexColorEffect] = useState("#40bfbf");
+  const [colorRange, setColorRange] = useState("5");
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
+  useDebouncyEffect(() => setHexColor(hexColorEffect), 200, [hexColorEffect]);
+
   useEffect(() => {
     const root = document.documentElement;
+    const { h, s, l }: any = hexToHSL(hexColor);
 
-    root.style.setProperty("--primary-color-h", `${color.h}`);
-    root.style.setProperty("--primary-color-s", `${color.s}%`);
-    root.style.setProperty("--primary-color-l", `${color.l}%`);
-    root.style.setProperty("--darken", `-${colorRangeDark}%`);
-    root.style.setProperty("--lighten", `${colorRangeLight}%`);
+    root.style.setProperty("--primary-color-h", `${h}`);
+    root.style.setProperty("--primary-color-s", `${s}%`);
+    root.style.setProperty("--primary-color-l", `${l}%`);
+    root.style.setProperty("--darken", `-${colorRange}%`);
+    root.style.setProperty("--lighten", `${colorRange}%`);
   });
 
   function onSubmit(data: any) {
-    alert([color.h, color.s, color.l, colorRangeLight, colorRangeDark]);
+    const { h, s, l }: any = hexToHSL(hexColor);
+
+    alert([h, s, l, colorRange]);
   }
 
   return (
@@ -32,42 +43,40 @@ export default function Form() {
       className="text-black flex flex-row flex-wrap justify-center items-center max-w-3xl p-12 my-5 mx-auto gap-5 lg:justify-around"
       onSubmit={handleSubmit((data) => onSubmit(data))}
     >
-      <div className="flex flex-col justify-center items-center relative py-3">
-        <HslColorPicker color={color} onChange={setColor} />
-      </div>
-
-      <div className="min-w-[200px] flex flex-col justify-center items-center relative py-3">
-        <label
-          htmlFor="colorRangeLight"
-          className="text-secondary-100 uppercase"
-        >
-          Lights Range
-        </label>
-        <input
-          type="range"
-          {...register("colorRangeLight")}
-          onChange={(e) => setColorRangeLight(e.target.value)}
-          value={colorRangeLight}
-          min="1"
-          max="20"
-          className="min-w-[200px] rounded-xl m-2"
+      <div className="flex flex-col justify-center items-center w-full py-3">
+          <label htmlFor="hexColor" className="text-secondary-100 text-sm uppercase self-start ml-2 mb-1">
+            Hex Code
+          </label>
+        <div className="flex flex-row justify-between items-start w-full">
+          <HexColorInput
+            className={clsx(
+              "border-2 border-transparent focus:border-primary-500",
+              styles.hexInput
+            )}
+            color={hexColor}
+            onChange={setHexColorEffect}
+            name="hexColor"
+          />
+          <ThemeToggle />
+        </div>
+        <HexColorPicker
+          className={styles["react-colorful"]}
+          color={hexColor}
+          onChange={setHexColorEffect}
         />
       </div>
 
-      <div className="min-w-[200px] flex flex-col justify-center items-center relative py-3">
-        <label
-          htmlFor="colorRangeDark"
-          className="text-secondary-100 uppercase"
-        >
-          Darks Range
+      <div className="min-w-[200px] flex flex-col justify-center items-center py-3">
+        <label htmlFor="colorRange" className="text-secondary-100 uppercase">
+          Adjust Shades Distance
         </label>
         <input
           type="range"
-          {...register("colorRangeDark")}
-          onChange={(e) => setColorRangeDark(e.target.value)}
-          value={colorRangeDark}
+          {...register("colorRange")}
+          onChange={(e) => setColorRange(e.target.value)}
+          value={colorRange}
           min="1"
-          max="20"
+          max="10"
           className="min-w-[200px] rounded-xl m-2"
         />
       </div>
@@ -77,7 +86,10 @@ export default function Form() {
           type="submit"
           {...register("submit")}
           value="Submit"
-          className="text-white min-w-[200px] p-3 rounded-xl border-2 border-white bg-accent-3 mt-5"
+          className={clsx(
+            hexToHSL(hexColor).l > 55 ? "text-black" : "text-white",
+            "min-w-[200px] p-3 rounded-xl border-2 border-white bg-primary-500 mt-5 "
+          )}
         />
       </div>
     </form>

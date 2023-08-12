@@ -7,15 +7,14 @@ export default function Home() {
       <h1 className="font-bold text-center"> Pallet Demo</h1>
       <p className="text-lg uppercase text-primary-100">to do:</p>
       <ul className="pl-2">
-        <li>Add color wheel</li>
+        <li className="line-through">Add color wheel</li>
         <li className="line-through">Live update</li>
         <li className="line-through">add color range slider (and update it automatically for high/low lightness)</li>
-        <li>light mode</li>
+        <li className="line-through">light mode</li>
         <li>add tailwind slate, zinc, neutral</li>
         <li>add optional tailwind colors extends</li>
         <li>output for CSS and tailwind</li>
         <li>optional tertiary and quaternary colors</li>
-        <li>auto-update color range slider for high/low lightness</li>
         <li>create multiple formulas to calculate colors ?? </li>
         </ul>
       <Form />

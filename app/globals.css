@@ -94,8 +94,9 @@
   }
 
   body {
-    @apply bg-black text-white text-base p-0 px-5 leading-6;
+    @apply bg-zinc-50 text-zinc-700 text-base p-0 px-5 leading-6 dark:bg-black dark:text-zinc-300 ;
   }
+
 
   h1,
   .h1,
@@ -109,7 +110,7 @@
   .h5,
   h6,
   .h6 {
-    @apply font-bold leading-none tracking-wide text-white;
+    @apply text-zinc-700 font-bold leading-none tracking-wide dark:text-zinc-400;
   }
   h1,
   .h1 {
