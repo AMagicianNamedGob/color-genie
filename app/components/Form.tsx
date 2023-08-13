@@ -6,7 +6,7 @@ import { useDebouncyEffect } from "use-debouncy";
 import { HexColorPicker, HexColorInput } from "react-colorful";
 import { hexToHSL } from "../lib/colorConvert";
 
-import styles from "./styles/Form.module.css";
+import styles from "./Form.module.css";
 import Output from "./Output";
 
 export default function Form() {
