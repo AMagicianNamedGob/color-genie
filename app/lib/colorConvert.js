@@ -1,4 +1,4 @@
-export default function hexToHSL(H) {
+export function hexToHSL(H) {
   // Convert hex to RGB first
   let r = 0,
     g = 0,
@@ -28,14 +28,25 @@ export default function hexToHSL(H) {
   else if (cmax === g) h = (b - r) / delta + 2;
   else h = (r - g) / delta + 4;
 
-  h = Math.round(h * 60);
+  h = Math.floor(h * 60); // don't round up
 
   if (h < 0) h += 360;
 
   l = (cmax + cmin) / 2;
   s = delta === 0 ? 0 : delta / (1 - Math.abs(2 * l - 1));
-  s = +(s * 100).toFixed(1);
-  l = +(l * 100).toFixed(1);
+  s = + Math.round(s * 100).toFixed(1);
+  l = + Math.round(l * 100).toFixed(1);
 
   return ({h,s,l});
+}
+
+export function hslToHex(h, s, l) {
+  l /= 100;
+  const a = s * Math.min(l, 1 - l) / 100;
+  const f = n => {
+    const k = (n + h / 30) % 12;
+    const color = l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
+    return Math.round(255 * color).toString(16).padStart(2, '0');   // convert to Hex and prefix "0" if needed
+  };
+  return `#${f(0)}${f(8)}${f(4)}`;
 }

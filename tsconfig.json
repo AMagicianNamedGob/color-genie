@@ -23,6 +23,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/lib/hexToHsl.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".d.ts", ".next/types/**/*.ts", "app/lib/colorConvert.js"],
   "exclude": ["node_modules"]
 }

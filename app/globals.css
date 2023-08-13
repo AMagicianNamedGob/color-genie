@@ -80,10 +80,20 @@
     --color-accent-6: calc(var(--primary-color-h) - 30) var(--primary-color-s)
       var(--primary-color-l);
 
-    --primary-color-h: 180%;
-    --primary-color-s: 50%;
-    --primary-color-l: 50%;
-    --lighten: 10%;
+    --color-grey-1: 0deg 0% 96%;
+    --color-grey-2: 0deg 0% 85%;
+    --color-grey-3: 0deg 0% 69%;
+    --color-grey-4: 0deg 0% 50%;
+    --color-grey-5: 0deg 0% 40%;
+    --color-grey-6: 0deg 0% 30%;
+    --color-grey-7: 0deg 0% 20%;
+    --color-grey-8: 0deg 0% 10%;
+    --color-grey-9: 0deg 0% 5%;
+
+    --primary-color-h: 180;
+    --primary-color-s: 50;
+    --primary-color-l: 50;
+    --lighten: 1.5;
     --darken: -10%;
     --color-white: 0deg 0% 100%;
   }
@@ -94,7 +104,7 @@
   }
 
   body {
-    @apply bg-zinc-50 text-zinc-700 text-base p-0 px-5 leading-6 dark:bg-black dark:text-zinc-300 ;
+    @apply bg-zinc-100 text-zinc-900 text-base p-0 px-5 leading-6 dark:bg-zinc-900 dark:text-zinc-200 ;
   }
 
 
@@ -110,7 +120,7 @@
   .h5,
   h6,
   .h6 {
-    @apply text-zinc-700 font-bold leading-none tracking-wide dark:text-zinc-400;
+    @apply text-zinc-600 font-bold leading-none tracking-wide dark:text-zinc-300;
   }
   h1,
   .h1 {

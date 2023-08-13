@@ -6,7 +6,7 @@ export default function Blot({ color }: { color: string }) {
       <div
         className={`bg-${color} border-2 border-white rounded-lg p-10`}
       ></div>
-      <p className="text-lg text-center capitalize py-2">{color}</p>
+      <p className="text-center capitalize py-2">{color}</p>
 
     </span>
   );
