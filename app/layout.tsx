@@ -6,7 +6,7 @@ import Providers from "./components/Providers";
 const font = Maven_Pro({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Pallet Town",
+  title: "Palette Genius",
   description: "Generate a color palette from a single color. Supports CSS and Tailwind CSS.",
 };
 

@@ -22,7 +22,7 @@ export default function Output({
   return (
     <>
       <section>
-        <h2>{tailwindSelected ? "Tailwind Config" : "CSS"}</h2>
+        <h2>{tailwindSelected ? "Tailwind" : "CSS"}</h2>
 
         {!tailwindSelected && (
           <div className="flex flex-col py-3">

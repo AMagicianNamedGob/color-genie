@@ -3,8 +3,8 @@ import Form from "./components/Form";
 
 export default function Home() {
   return (
-    <main className="p-24">
-      <h1 className="font-bold text-center"> Pallet Town (demo)</h1>
+    <main className="py-8 md:p-24">
+      <h1 className="font-bold text-center"> Palette Genius (demo)</h1>
       <Form />
       <h2 className="ml-2 -mb-5">Primary</h2>
       <section className="grid grid-cols-1 mt-9 md:grid-cols-3 xl:grid-cols-9 gap-4">

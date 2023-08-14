@@ -36,11 +36,19 @@ export default function Form() {
     setSubmitted(true);
   }
 
+  function onReset(e: any) {
+    e.preventDefault();
+    setSubmitted(false);
+    setHexColorEffect("#40bfbf");
+    setColorRange("5");
+    setTailwindSelected(false);
+  }
+
   return (
     <>
-      <section className="max-w-3xl p-12 mx-auto">
+      <section className="max-w-3xl mx-auto">
         {submitted && (
-          <div>
+          <div className="py-12">
             <Output
               submitted={submitted}
               hsl={hsl}
@@ -58,7 +66,7 @@ export default function Form() {
               htmlFor="showTailwind"
               className="text-secondary-100 uppercase"
             >
-              Show Tailwind Config
+              use tailwind
             </label>
           </div>
         )}
@@ -107,16 +115,31 @@ export default function Form() {
           />
         </div>
 
-        <div className="w-full text-center">
-          <input
-            type="submit"
-            value="Submit"
-            className={clsx(
-              hexToHSL(hexColor).l > 50 ? "text-black" : "text-white",
-              "min-w-[200px] p-3 rounded-xl border-2 border-white bg-primary-500 mt-5 "
-            )}
-          />
-        </div>
+        {!submitted && (
+          <div className="w-full text-center">
+            <input
+              type="submit"
+              value="Generate Code"
+              className={clsx(
+                hexToHSL(hexColor).l > 50 ? "text-black" : "text-white",
+                "min-w-[200px] p-3 rounded-xl border-2 border-white bg-primary-500 mb-12"
+              )}
+            />
+          </div>
+        )}
+        {submitted && (
+          <div className="w-full text-center">
+            <input
+              type="reset"
+              value="Reset"
+              onClick={(e) => onReset(e)}
+              className={clsx(
+                hexToHSL(hexColor).l > 50 ? "text-black" : "text-white",
+                "min-w-[200px] p-3 rounded-xl border-2 border-white bg-secondary-500 mb-12"
+              )}
+            />
+          </div>
+        )}
       </form>
     </>
   );
