@@ -24,7 +24,7 @@ export default function ThemeToggle() {
   return (
     <div>
       <button
-        className="border-0 rounded-full text-2xl p-1 mb-2 transition hover:animate-pulse"
+        className="border-2 border-zinc-500 rounded-lg text-2xl p-0 mb-4"
         onClick={(e) => handleClick(e)}
       >
         {theme === "light" ? "🌞" : "🌚"}

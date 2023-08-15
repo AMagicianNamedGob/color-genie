@@ -1,12 +1,12 @@
-export default function Blot({ color }: { color: string }) {
+export default function Blot({ color, name }: { color: string, name: string | number }) {
 
 
   return (
     <span>
       <div
-        className={`bg-${color} border-2 border-white rounded-lg p-10`}
+        className={`bg-${color} border-2 border-zinc-500 rounded-lg p-5`}
       ></div>
-      <p className="text-center capitalize py-2">{color}</p>
+      <p className="text-center capitalize py-2">{name}</p>
 
     </span>
   );

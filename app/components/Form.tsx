@@ -1,19 +1,21 @@
 "use client";
-import { useState, useEffect } from "react";
-import ThemeToggle from "./ThemeToggle";
+import { useState, useEffect, Suspense } from "react";
 import clsx from "clsx";
 import { useDebouncyEffect } from "use-debouncy";
 import { HexColorPicker, HexColorInput } from "react-colorful";
 import { hexToHSL } from "../lib/colorConvert";
-
+import ThemeToggle from "./ThemeToggle";
 import styles from "./Form.module.css";
 import Output from "./Output";
 
 export default function Form() {
-  const [hexColor, setHexColor] = useState("#40bfbf");
-  const [hexColorEffect, setHexColorEffect] = useState("#40bfbf");
-  const [colorRange, setColorRange] = useState("5");
-  const [hsl, setHsl] = useState({ h: 180, s: 50, l: 50 });
+  const [hexColor, setHexColor] = useState("#701397");
+  const [hexColorEffect, setHexColorEffect] = useState("#701397");
+  const [lRange, setLRange] = useState("0");
+  const [hRange, setHRange] = useState("10");
+  const [sRange, setSRange] = useState("10");
+  const [hsl, setHsl] = useState({ h: 282, s: 78, l: 33 });
+  const [picker, setPicker] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [tailwindSelected, setTailwindSelected] = useState(false);
 
@@ -27,9 +29,12 @@ export default function Form() {
     root.style.setProperty("--primary-color-h", `${h}`);
     root.style.setProperty("--primary-color-s", `${s}%`);
     root.style.setProperty("--primary-color-l", `${l}%`);
-    root.style.setProperty("--darken", `-${colorRange}%`);
-    root.style.setProperty("--lighten", `${colorRange}%`);
-  }, [hexColor, colorRange]);
+    root.style.setProperty("--darken", `-${lRange}%`);
+    root.style.setProperty("--lighten", `${lRange}%`);
+    root.style.setProperty("--saturation-lighten", `${sRange}%`);
+    root.style.setProperty("--saturation-darken", `-${sRange}%`);
+    root.style.setProperty("--spin", `${hRange}`);
+  }, [hexColor, lRange, hRange, sRange]);
 
   function onSubmit(e: any) {
     e.preventDefault();
@@ -39,35 +44,48 @@ export default function Form() {
   function onReset(e: any) {
     e.preventDefault();
     setSubmitted(false);
-    setHexColorEffect("#40bfbf");
-    setColorRange("5");
+    setHexColorEffect("#701397");
+    setLRange("0");
+    setHRange("10");
+    setSRange("10");
     setTailwindSelected(false);
+  }
+
+  function togglePicker(e: any) {
+    e.preventDefault();
+    setPicker(!picker);
   }
 
   return (
     <>
       <section className="max-w-3xl mx-auto">
         {submitted && (
-          <div className="py-12">
-            <Output
-              submitted={submitted}
-              hsl={hsl}
-              colorRange={colorRange}
-              tailwindSelected={tailwindSelected}
-            />
-            <input
-              name="showTailwind"
-              type="checkbox"
-              className="mr-2"
-              checked={tailwindSelected}
-              onChange={(e) => setTailwindSelected(e.target.checked)}
-            />
-            <label
-              htmlFor="showTailwind"
-              className="text-secondary-100 uppercase"
-            >
-              use tailwind
-            </label>
+          <div>
+            <div className="py-12">
+              <h2>{tailwindSelected ? "Tailwind" : "CSS"}</h2>
+              <input
+                name="showTailwind"
+                type="checkbox"
+                className="mr-2"
+                checked={tailwindSelected}
+                onChange={(e) => setTailwindSelected(e.target.checked)}
+              />
+              <label htmlFor="showTailwind" className="uppercase">
+                use tailwind
+              </label>
+              <input
+                type="reset"
+                value="Reset Form"
+                onClick={(e) => onReset(e)}
+                className="block my-2 underline hover:cursor-pointer hover:text-black dark:hover:text-white"
+              />
+              <Output
+                submitted={submitted}
+                hsl={hsl}
+                lRange={lRange}
+                tailwindSelected={tailwindSelected}
+              />
+            </div>
           </div>
         )}
       </section>
@@ -76,69 +94,79 @@ export default function Form() {
         onSubmit={(e) => onSubmit(e)}
       >
         <div className="flex flex-col justify-center items-center w-full py-3">
-          <label
-            htmlFor="hexColor"
-            className="text-secondary-100 text-sm uppercase self-start ml-2 mb-1"
-          >
-            Hex Code
-          </label>
-          <div className="flex flex-row justify-between items-start w-full">
+          <div className="flex flex-row justify-start items-center w-full">
             <HexColorInput
               className={clsx(
-                "border-2 border-transparent focus:border-primary-500",
+                "border-2 border-zinc-500 focus:border-primary-500",
                 styles.hexInput
               )}
               color={hexColor}
               onChange={setHexColorEffect}
               name="hexColor"
             />
+
+            <button
+              className="bg-primary-500 border-2 border-zinc-500 p-4 mb-4 mx-3"
+              onClick={(e) => togglePicker(e)}
+            ></button>
             <ThemeToggle />
           </div>
-          <HexColorPicker
-            className={styles["react-colorful"]}
-            color={hexColor}
-            onChange={setHexColorEffect}
-          />
-        </div>
 
-        <div className="min-w-[200px] flex flex-col justify-center items-center py-3">
-          <label htmlFor="colorRange" className="text-secondary-100 uppercase">
-            Adjust Shades Range
-          </label>
-          <input
-            type="range"
-            onChange={(e) => setColorRange(e.target.value)}
-            value={colorRange}
-            min="1"
-            max="10"
-            className="min-w-[200px] rounded-xl m-2"
-          />
-        </div>
+          <div className="w-full">
+            {picker && (
+              <HexColorPicker
+                className={styles["react-colorful"]}
+                color={hexColor}
+                onChange={setHexColorEffect}
+              />
+            )}
 
+            <div className="flex flex-row flex-wrap justify-between items-center w-full">
+              <span className="text-xs text-gray-500 dark:text-gray-400 flex flex-col mt-9 mx-4 w-1/3">
+                <label htmlFor="hueRange">Hue Range</label>
+                <input
+                  type="range"
+                  onChange={(e) => setHRange(e.target.value)}
+                  value={hRange}
+                  min="0"
+                  max="10"
+                  id="hueRange"
+                />
+              </span>
+              <span className="text-xs text-gray-500 dark:text-gray-400 flex flex-col mt-9 mx-4 w-1/3">
+                <label htmlFor="satRange">Saturation Range</label>
+                <input
+                  type="range"
+                  onChange={(e) => setSRange(e.target.value)}
+                  value={sRange}
+                  min="0"
+                  max="10"
+                  id="satRange"
+                />
+              </span>
+              <span className="text-xs text-gray-500 dark:text-gray-400 flex flex-col mt-9 mx-4 w-1/3">
+                <label htmlFor="lightRange">Luminesce Range</label>
+                <input
+                  type="range"
+                  onChange={(e) => setLRange(e.target.value)}
+                  value={lRange}
+                  min="1"
+                  max="10"
+                  id="lightRange"
+                />
+              </span>
+            </div>
+          </div>
+        </div>
         {!submitted && (
-          <div className="w-full text-center">
-            <input
-              type="submit"
-              value="Generate Code"
-              className={clsx(
-                hexToHSL(hexColor).l > 50 ? "text-black" : "text-white",
-                "min-w-[200px] p-3 rounded-xl border-2 border-white bg-primary-500 mb-12"
-              )}
-            />
-          </div>
-        )}
-        {submitted && (
-          <div className="w-full text-center">
-            <input
-              type="reset"
-              value="Reset"
-              onClick={(e) => onReset(e)}
-              className={clsx(
-                hexToHSL(hexColor).l > 50 ? "text-black" : "text-white",
-                "min-w-[200px] p-3 rounded-xl border-2 border-white bg-secondary-500 mb-12"
-              )}
-            />
-          </div>
+          <input
+            type="submit"
+            value="Generate Code"
+            className={clsx(
+              hexToHSL(hexColor).l > 50 ? "text-black" : "text-white",
+              "min-w-[200px] p-3 rounded-xl border-2 border-zinc-500 bg-primary-500 mb-6"
+            )}
+          />
         )}
       </form>
     </>

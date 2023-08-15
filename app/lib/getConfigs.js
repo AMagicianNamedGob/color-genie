@@ -1,10 +1,10 @@
 import { hslToHex } from "./colorConvert";
 
-export default function getStyleConfig(hsl, tailwind, colorRange) {
+export default function getStyleConfig(hsl, tailwind, lightRange) {
   const h = parseInt(hsl.h);
   const s = parseInt(hsl.s);
   const l = parseInt(hsl.l);
-  const r = colorRange;
+  const r = lightRange;
   // todo this should change based on the color pallet strategy //
   const factor = 180;
 
