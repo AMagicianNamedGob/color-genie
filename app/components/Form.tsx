@@ -11,9 +11,9 @@ import Output from "./Output";
 export default function Form() {
   const [hexColor, setHexColor] = useState("#701397");
   const [hexColorEffect, setHexColorEffect] = useState("#701397");
-  const [lRange, setLRange] = useState("0");
-  const [hRange, setHRange] = useState("10");
-  const [sRange, setSRange] = useState("10");
+  const [lRange, setLRange] = useState("15");
+  const [hRange, setHRange] = useState("6");
+  const [sRange, setSRange] = useState("75");
   const [hsl, setHsl] = useState({ h: 282, s: 78, l: 33 });
   const [picker, setPicker] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -29,11 +29,9 @@ export default function Form() {
     root.style.setProperty("--primary-color-h", `${h}`);
     root.style.setProperty("--primary-color-s", `${s}%`);
     root.style.setProperty("--primary-color-l", `${l}%`);
-    root.style.setProperty("--darken", `-${lRange}%`);
-    root.style.setProperty("--lighten", `${lRange}%`);
-    root.style.setProperty("--saturation-lighten", `${sRange}%`);
-    root.style.setProperty("--saturation-darken", `-${sRange}%`);
-    root.style.setProperty("--spin", `${hRange}`);
+    root.style.setProperty("--lRange", `${lRange}%`);
+    root.style.setProperty("--sRange", `${sRange}%`);
+    root.style.setProperty("--hRange", `${hRange}`);
   }, [hexColor, lRange, hRange, sRange]);
 
   function onSubmit(e: any) {
@@ -45,9 +43,9 @@ export default function Form() {
     e.preventDefault();
     setSubmitted(false);
     setHexColorEffect("#701397");
-    setLRange("0");
-    setHRange("10");
-    setSRange("10");
+    setLRange("15");
+    setHRange("6");
+    setSRange("75");
     setTailwindSelected(false);
   }
 
@@ -83,6 +81,8 @@ export default function Form() {
                 submitted={submitted}
                 hsl={hsl}
                 lRange={lRange}
+                hRange={hRange}
+                sRange={sRange}
                 tailwindSelected={tailwindSelected}
               />
             </div>
@@ -106,8 +106,9 @@ export default function Form() {
             />
 
             <button
-              className="bg-primary-500 border-2 border-zinc-500 p-4 mb-4 mx-3"
+              className="bg-primary-500 border-2 border-zinc-500 p-5 mb-4 mx-3 rounded-lg"
               onClick={(e) => togglePicker(e)}
+              role="presentation"
             ></button>
             <ThemeToggle />
           </div>
@@ -118,40 +119,42 @@ export default function Form() {
                 className={styles["react-colorful"]}
                 color={hexColor}
                 onChange={setHexColorEffect}
+                role="presentation"
               />
             )}
 
             <div className="flex flex-row flex-wrap justify-between items-center w-full">
-              <span className="text-xs text-gray-500 dark:text-gray-400 flex flex-col mt-9 mx-4 w-1/3">
-                <label htmlFor="hueRange">Hue Range</label>
+              <span className="w-full text-xs text-gray-500 dark:text-gray-400 flex flex-col mt-9 mx-1 md:px-3 md:mx-0 md:w-1/3">
+                <label htmlFor="hueRange">Adjust Hue</label>
                 <input
                   type="range"
                   onChange={(e) => setHRange(e.target.value)}
                   value={hRange}
-                  min="0"
-                  max="10"
+                  min="1"
+                  max="11"
                   id="hueRange"
                 />
               </span>
-              <span className="text-xs text-gray-500 dark:text-gray-400 flex flex-col mt-9 mx-4 w-1/3">
-                <label htmlFor="satRange">Saturation Range</label>
+              <span className="w-full text-xs text-gray-500 dark:text-gray-400 flex flex-col mt-9 mx-1 md:px-3 md:mx-0 md:w-1/3">
+                <label htmlFor="satRange">Adjust Saturation</label>
                 <input
                   type="range"
                   onChange={(e) => setSRange(e.target.value)}
                   value={sRange}
                   min="0"
-                  max="10"
+                  max="100"
+                  step="5"
                   id="satRange"
                 />
               </span>
-              <span className="text-xs text-gray-500 dark:text-gray-400 flex flex-col mt-9 mx-4 w-1/3">
-                <label htmlFor="lightRange">Luminesce Range</label>
+              <span className="w-full text-xs text-gray-500 dark:text-gray-400 flex flex-col mt-9 mx-1 md:px-3 md:mx-0 md:w-1/3 ">
+                <label htmlFor="lightRange">Adjust Luminesce</label>
                 <input
                   type="range"
                   onChange={(e) => setLRange(e.target.value)}
                   value={lRange}
                   min="1"
-                  max="10"
+                  max="31"
                   id="lightRange"
                 />
               </span>

@@ -24,8 +24,9 @@ export default function ThemeToggle() {
   return (
     <div>
       <button
-        className="border-2 border-zinc-500 rounded-lg text-2xl p-0 mb-4"
+        className="border-2 border-zinc-500 rounded-lg text-2xl p-1 mb-4"
         onClick={(e) => handleClick(e)}
+        aria-hidden
       >
         {theme === "light" ? "🌞" : "🌚"}
       </button>

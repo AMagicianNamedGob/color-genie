@@ -77,8 +77,7 @@ module.exports = {
         800: "hsl(var(--color-accent-2--darkest) / 1)",
         900: "hsl(var(--color-accent-2--max-dark) / 1)",
       },
-
-      white: "hsl(var(--color-white) / 1)",
+      white: colors.white,
       black: colors.black,
       slate: colors.slate,
       zinc: colors.zinc,
