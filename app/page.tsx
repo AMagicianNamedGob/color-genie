@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <main className="max-w-3xl relative py-8 mx-auto">
 
-      <h1 className="font-bold text-center"> Palette Genius (demo)</h1>
+      <h1 className="text-center mb-16 "> Palette Genius </h1>
       <Form />
       <div className="max-w-3xl mx-auto">
         <h2 className="ml-2 -mb-5">Primary</h2>

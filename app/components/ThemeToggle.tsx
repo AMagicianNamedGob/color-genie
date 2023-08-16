@@ -16,7 +16,7 @@ export default function ThemeToggle() {
     return null;
   }
 
-  function handleClick(e) {
+  function handleClick(e:any) {
     e.preventDefault();
     setTheme(theme === "light" ? "dark" : "light");
   }

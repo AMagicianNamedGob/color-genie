@@ -166,8 +166,8 @@ export default function Form() {
             type="submit"
             value="Generate Code"
             className={clsx(
-              hexToHSL(hexColor).l > 50 ? "text-black" : "text-white",
-              "min-w-[200px] p-3 rounded-xl border-2 border-zinc-500 bg-primary-500 mb-6"
+              hexToHSL(hexColor).l > 70 ? "text-black" : "text-white",
+              "min-w-[200px] p-3 rounded-xl border-2 border-zinc-500 bg-primary-900 mb-6"
             )}
           />
         )}
