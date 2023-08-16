@@ -4,7 +4,7 @@ import Form from "./components/Form";
 
 export default function Home() {
   return (
-    <main className="max-w-3xl relative py-8 mx-auto">
+    <main className="max-w-3xl relative py-4 mx-auto">
 
       <h1 className="text-center mb-8 md:mb-10"> Color Geni.us </h1>
       <Form />

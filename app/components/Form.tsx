@@ -131,16 +131,15 @@ export default function Form() {
             >⚙
             </button>
             <ThemeToggle />
-            <a
-              href="#"
-              className="w-14 h-14 text-4xl flex justify-center items-center no-underline border-2 rounded-lg border-zinc-500 shadow-inner shadow-white bg-gradient-to-br from-primary-900 to-secondary-100 hover:cursor-pointer hover:from-primary-100 hover:to-primary-900"
+            <button
+              className="hidden w-14 h-14 text-4xl flex justify-center items-center no-underline border-2 rounded-lg border-zinc-500 shadow-inner shadow-white bg-gradient-to-br from-primary-900 to-secondary-100 hover:cursor-pointer hover:from-primary-100 hover:to-primary-900"
               role="presentation"
             >❔
-            </a>
+            </button>
             <input
               type="submit"
               value={submitted ? "Reset" : "Generate Code"}
-              className="h-14 w-8/12 rounded-xl border-2 border-zinc-500 font-bold tracking-widest uppercase shadow-inner shadow-white bg-gradient-to-br from-primary-900 to-secondary-100 hover:cursor-pointer hover:from-primary-100 hover:to-primary-900"
+              className="h-14 w-full rounded-xl border-2 border-zinc-500 font-bold tracking-widest uppercase shadow-inner shadow-white bg-gradient-to-br from-primary-900 to-secondary-100 hover:cursor-pointer hover:from-primary-100 hover:to-primary-900 md:w-8/12"
             />
           </div>
           <div className="w-full">
