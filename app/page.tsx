@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <main className="max-w-3xl relative py-8 mx-auto">
 
-      <h1 className="text-center mb-16"> Color Genie </h1>
+      <h1 className="text-center mb-16"> Color Geni.us </h1>
       <Form />
       <div className="max-w-3xl mx-auto">
         <h2 className="mt-6 ml-2 light:text-transparent dark:text-transparent bg-clip-text bg-gradient-to-br from-primary-100 to-primary-900">Primary</h2>
