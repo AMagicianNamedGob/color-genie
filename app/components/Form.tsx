@@ -112,7 +112,7 @@ export default function Form() {
             onChange={setHexColorEffect}
             name="hexColor"
             />
-          <div className="flex flex-row flex-wrap justify-between items-center w-full mb-2">
+          <div className="flex flex-row flex-wrap justify-start items-center w-full mb-2 gap-2 md:justify-between">
             <button
               className="w-14 h-14 flex justify-center items-center text-2xl text-black border-2 border-zinc-500 shadow-inner shadow-white bg-gradient-to-br from-primary-900 to-secondary-100 hover:cursor-pointer hover:from-primary-100 hover:to-primary-900"
               onClick={(e) => togglePicker(e)}
