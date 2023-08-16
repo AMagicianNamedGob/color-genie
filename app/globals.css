@@ -307,7 +307,7 @@
 
   h1,
   .h1 {
-    @apply text-4xl leading-relaxed font-extralight tracking-widest uppercase border-2 border-primary-500 rounded-lg dark:border-primary-500 dark:text-primary-300  dark:px-2 dark:py-1;
+    @apply text-4xl leading-relaxed font-extralight tracking-widest uppercase border-2 border-primary-500 rounded-lg py-1 dark:border-primary-500 dark:text-primary-300  dark:px-2;
   }
   h2,
   .h2 {

@@ -5,16 +5,11 @@
 }
 
 .hexInput {
-  box-sizing: border-box;
   width: 90px;
   padding: 8px;
-  border-radius: 0.5rem;
-  background: #eee;
   outline: none;
   font: inherit;
   text-transform: uppercase;
   text-align: center;
-  align-self: flex-start;
-  justify-self: flex-start;
   transition: border-color 0.2s ease-in-out;
 }
