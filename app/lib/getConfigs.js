@@ -354,6 +354,7 @@ module.exports = {
       slate: colors.slate,
       zinc: colors.zinc,
       grey: colors.neutral,
+      transparent: colors.transparent
     },
   },
 // ...

@@ -82,6 +82,7 @@ module.exports = {
       slate: colors.slate,
       zinc: colors.zinc,
       gray: colors.neutral,
+      transparent: colors.transparent,
     },
   },
   safelist: [

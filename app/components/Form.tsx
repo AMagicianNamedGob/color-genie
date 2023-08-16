@@ -104,15 +104,17 @@ export default function Form() {
         onSubmit={(e) => onSubmit(e)}
       >
         <div className="flex flex-col justify-center items-center w-full py-3">
+          <label htmlFor="hexColor" className="text-xs self-start text-zinc-600 dark:text-zinc-300 ml-2">
+          Hex Code</label>
           <HexColorInput
-            className="bg-zinc-300 border-2 border-zinc-500 rounded-lg w-24 self-start focus:border-accent-500 p-2 mb-2"
+            className="bg-zinc-300 border-2 border-zinc-500 font-semibold tracking-wide uppercase rounded-xl w-[183px] self-start focus:border-accent-500 p-2 mb-2"
             color={hexColor}
             onChange={setHexColorEffect}
             name="hexColor"
-          />
+            />
           <div className="flex flex-row flex-wrap justify-between items-center w-full mb-2">
             <button
-              className="w-14 h-14 flex justify-center items-center text-2xl text-black border-2 border-zinc-500 bg-gradient-to-br from-primary-900 to-secondary-100 hover:cursor-pointer hover:from-primary-100 hover:to-primary-900"
+              className="w-14 h-14 flex justify-center items-center text-2xl text-black border-2 border-zinc-500 shadow-inner shadow-white bg-gradient-to-br from-primary-900 to-secondary-100 hover:cursor-pointer hover:from-primary-100 hover:to-primary-900"
               onClick={(e) => togglePicker(e)}
               role="presentation"
             >
@@ -120,7 +122,7 @@ export default function Form() {
             </button>
 
             <button
-              className="w-14 h-14 text-4xl flex justify-center items-center text-zinc-800 border-2 border-zinc-500 bg-gradient-to-br from-primary-900 to-secondary-100 hover:cursor-pointer hover:from-primary-100 hover:to-primary-900"
+              className="w-14 h-14 text-4xl flex justify-center items-center text-zinc-800 border-2 border-zinc-500 shadow-inner shadow-white bg-gradient-to-br from-primary-900 to-secondary-100 hover:cursor-pointer hover:from-primary-100 hover:to-primary-900"
               onClick={(e) => toggleSettings(e)}
               role="presentation"
             >
@@ -131,7 +133,7 @@ export default function Form() {
             <input
               type="submit"
               value={submitted ? "Reset" : "Generate Code"}
-              className="h-14 w-9/12 rounded-lg border-2 border-zinc-500 font-bold tracking-widest uppercase bg-gradient-to-br from-primary-900 to-secondary-100 hover:cursor-pointer hover:from-primary-100 hover:to-primary-900"
+              className="h-14 w-9/12 rounded-xl border-2 border-zinc-500 font-bold tracking-widest uppercase shadow-inner shadow-white bg-gradient-to-br from-primary-900 to-secondary-100 hover:cursor-pointer hover:from-primary-100 hover:to-primary-900"
             />
           </div>
 
@@ -146,7 +148,7 @@ export default function Form() {
             )}
 
             {settings && (
-              <div className="flex flex-row flex-wrap justify-between items-center w-full">
+              <div className="flex flex-row flex-wrap justify-between items-center w-full border-2 border-zinc-500 rounded-xl mt-2 pb-8">
                 <span className="w-full text-xs text-gray-500 dark:text-gray-400 flex flex-col mt-9 mx-1 md:px-3 md:mx-0 md:w-1/3">
                   <label htmlFor="hueRange">Adjust Hue</label>
                   <input

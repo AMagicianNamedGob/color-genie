@@ -24,7 +24,7 @@ export default function ThemeToggle() {
   return (
     <div>
       <button
-        className="border-2 border-zinc-500 text-2xl w-14 h-14 text-black bg-gradient-to-br from-primary-900 to-secondary-100 p-2 hover:cursor-pointer hover:from-primary-100 hover:to-primary-900"
+        className="border-2 border-zinc-500 text-2xl w-14 h-14 text-black shadow-inner shadow-white bg-gradient-to-br from-primary-900 to-secondary-100 p-2 hover:cursor-pointer hover:from-primary-100 hover:to-primary-900"
         onClick={(e) => handleClick(e)}
         aria-hidden
       >
