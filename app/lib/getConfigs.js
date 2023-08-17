@@ -279,8 +279,12 @@ export default function getStyleConfig(hsl, tailwind, ranges) {
   const withTailwind = `
 // tailwind.config.js
 
+// https://tailwindcss.com/docs/customizing-colors#using-custom-colors
+
+/** @type {import('tailwindcss').Config} */
+const colors = require("tailwindcss/colors");
+
 module.exports = {
-// ...
   theme: {
     colors: {
       primary: {
@@ -357,7 +361,6 @@ module.exports = {
       transparent: colors.transparent
     },
   },
-// ...
 };`;
 
   return tailwind ? withTailwind : noTailwind;

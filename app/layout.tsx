@@ -6,9 +6,8 @@ import Providers from "./components/Providers";
 const font = Maven_Pro({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Color Geni.us",
+  title: "Color Genius",
   description: "Generate a palette from one color. CSS and Tailwind supported.",
-
 };
 
 export default function RootLayout({

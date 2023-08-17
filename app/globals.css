@@ -331,7 +331,7 @@
   }
 
   a {
-    @apply text-secondary-500 underline underline-offset-2 opacity-80 transition-all duration-200 ease-in-out;
+    @apply text-black underline underline-offset-2 opacity-80 transition-all duration-200 ease-in-out dark:text-white hover:opacity-70 dark:hover:text-primary-500;
   }
 
   button,

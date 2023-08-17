@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, Suspense } from "react";
+import { useRouter } from "next/navigation";
 import { useDebouncyEffect } from "use-debouncy";
 import { HexColorPicker, HexColorInput } from "react-colorful";
 import { hexToHSL } from "../lib/colorConvert";
@@ -30,6 +31,8 @@ export default function Form() {
   const [settings, setSettings] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [tailwindSelected, setTailwindSelected] = useState(false);
+
+  const route = useRouter();
 
   useDebouncyEffect(() => setHexColor(hexColorEffect), 200, [hexColorEffect]);
 
@@ -144,8 +147,11 @@ export default function Form() {
               }}
             />
             <ThemeToggle />
-                  <FormToggleButton
-              onClick={(e) => e.preventDefault()}
+            <FormToggleButton
+              onClick={(e) => {
+                e.preventDefault();
+                route.push("/#help");
+              }}
               active={false}
               icon={{
                 src: "icons/question.svg",
