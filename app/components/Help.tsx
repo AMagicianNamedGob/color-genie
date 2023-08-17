@@ -14,8 +14,8 @@ export default function Help() {
         includes a Tailwind toggle if you want to{" "}
         <a href="https://tailwindcss.com/docs/customizing-colors#using-custom-colors">
           use custom colors in your Tailwind config
-        </a>
-        .
+        </a>.
+        <p>Included in the generated code are several ranges in grey. All together the generated code will create over 90 different colors to use in your next project. My suggestion is to pick two or three ranges plus one grey range and stick to using those.</p>
       </p>
       <h2 className="h1 text-center mt-24 mb-4">Why Is This?</h2>
       <p className="text-lg leading-8 mt-8 mt:mb-10">
