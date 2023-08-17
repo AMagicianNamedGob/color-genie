@@ -11,11 +11,11 @@ import Output from "./Output";
 
 export default function Form() {
   const defaults = {
-    hexColor: "#144A49",
+    hexColor: "#155E97",
     lRange: "15",
     hRange: "6",
     sRange: "75",
-    hsl: { h: 179, s: 57, l: 18 },
+    hsl: { h: 206, s: 76, l: 34 },
   };
 
   // ? can useRef ? //

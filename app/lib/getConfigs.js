@@ -7,7 +7,7 @@ export default function getStyleConfig(hsl, tailwind, ranges) {
   const lr = parseInt(ranges.lr);
   const sr = parseInt(ranges.sr);
   const hr = parseInt(ranges.hr);
-  const factor = 90;
+  const factor = 45;
 
   const noTailwind = `
 :root {
@@ -40,200 +40,286 @@ export default function getStyleConfig(hsl, tailwind, ranges) {
   --color-primary--900: ${hslToHex(h + hr / 2, s + sr / 2, l + lr / 2)};
 
   // secondary //
-  --color-secondary--100: ${hslToHex(h + hr + factor, s + sr * 2, l + lr * 2)};
+  --color-secondary--100: ${hslToHex(
+    h + hr + factor * 4,
+    s + sr * 2,
+    l + lr * 2
+  )};
   --color-secondary--200: ${hslToHex(
-    h + hr + factor,
+    h + hr + factor * 4,
     s + sr * 1.75,
     l + lr * 1.75
   )};
   --color-secondary--300: ${hslToHex(
-    h + hr + factor,
+    h + hr + factor * 4,
     s + sr * 1.5,
     l + lr * 1.5
   )};
   --color-secondary--400: ${hslToHex(
-    h + hr + factor,
+    h + hr + factor * 4,
     s + sr * 1.25,
     l + lr * 1.25
   )};
-  --color-secondary--500: ${hslToHex(h + hr + factor, s + sr, l + lr)};
+  --color-secondary--500: ${hslToHex(h + hr + factor * 4, s + sr, l + lr)};
   --color-secondary--600: ${hslToHex(
-    h + hr + factor,
+    h + hr + factor * 4,
     s + sr / 1.25,
     l + lr / 1.25
   )};
   --color-secondary--700: ${hslToHex(
-    h + hr + factor,
+    h + hr + factor * 4,
     s + sr / 1.5,
     l + lr / 1.5
   )};
   --color-secondary--800: ${hslToHex(
-    h + hr + factor,
+    h + hr + factor * 4,
     s + sr / 1.75,
     l + lr / 1.75
   )};
-  --color-secondary--900: ${hslToHex(h + hr + factor, s + sr / 2, l + lr / 2)};
+  --color-secondary--900: ${hslToHex(
+    h + hr + factor * 4,
+    s + sr / 2,
+    l + lr / 2
+  )};
 
-  // tertiary //
-  --color-secondary--100: ${hslToHex(h + hr - factor, s + sr * 2, l + lr * 2)};
-  --color-secondary--200: ${hslToHex(
-    h + hr - factor,
+  // tertiary-1 //
+  --color-tertiary-1--100: ${hslToHex(
+    h + hr - factor * 2,
+    s + sr * 2,
+    l + lr * 2
+  )};
+  --color-tertiary-1--200: ${hslToHex(
+    h + hr - factor * 2,
     s + sr * 1.75,
     l + lr * 1.75
   )};
-  --color-secondary--300: ${hslToHex(
-    h + hr - factor,
+  --color-tertiary-1--300: ${hslToHex(
+    h + hr - factor * 2,
     s + sr * 1.5,
     l + lr * 1.5
   )};
-  --color-secondary--400: ${hslToHex(
-    h + hr - factor,
+  --color-tertiary-1--400: ${hslToHex(
+    h + hr - factor * 2,
     s + sr * 1.25,
     l + lr * 1.25
   )};
-  --color-secondary--500: ${hslToHex(h + hr - factor, s + sr, l + lr)};
-  --color-secondary--600: ${hslToHex(
-    h + hr - factor,
+  --color-tertiary-1--500: ${hslToHex(h + hr - factor * 2, s + sr, l + lr)};
+  --color-tertiary-1--600: ${hslToHex(
+    h + hr - factor * 2,
     s + sr / 1.25,
     l + lr / 1.25
   )};
-  --color-secondary--700: ${hslToHex(
-    h + hr - factor,
+  --color-tertiary-1--700: ${hslToHex(
+    h + hr - factor * 2,
     s + sr / 1.5,
     l + lr / 1.5
   )};
-  --color-secondary--800: ${hslToHex(
-    h + hr - factor,
+  --color-tertiary-1--800: ${hslToHex(
+    h + hr - factor * 2,
     s + sr / 1.75,
     l + lr / 1.75
   )};
-  --color-secondary--900: ${hslToHex(h + hr - factor, s + sr / 2, l + lr / 2)};
+  --color-tertiary-1--900: ${hslToHex(
+    h + hr - factor * 2,
+    s + sr / 2,
+    l + lr / 2
+  )};
 
-  // contrast //
-  --color-contrast--100: ${hslToHex(
+  // tertiary-2 //
+  --color-tertiary-2--100: ${hslToHex(
     h + hr + factor * 2,
     s + sr * 2,
     l + lr * 2
   )};
-  --color-contrast--200: ${hslToHex(
+  --color-tertiary-2--200: ${hslToHex(
     h + hr + factor * 2,
     s + sr * 1.75,
     l + lr * 1.75
   )};
-  --color-contrast--300: ${hslToHex(
+  --color-tertiary-2--300: ${hslToHex(
     h + hr + factor * 2,
     s + sr * 1.5,
     l + lr * 1.5
   )};
-  --color-contrast--400: ${hslToHex(
+  --color-tertiary-2--400: ${hslToHex(
     h + hr + factor * 2,
     s + sr * 1.25,
     l + lr * 1.25
   )};
-  --color-contrast--500: ${hslToHex(h + hr + factor * 2, s + sr, l + lr)};
-  --color-contrast--600: ${hslToHex(
+  --color-tertiary-2--500: ${hslToHex(h + hr + factor * 2, s + sr, l + lr)};
+  --color-tertiary-2--600: ${hslToHex(
     h + hr + factor * 2,
     s + sr / 1.25,
     l + lr / 1.25
   )};
-  --color-contrast--700: ${hslToHex(
+  --color-tertiary-2--700: ${hslToHex(
     h + hr + factor * 2,
     s + sr / 1.5,
     l + lr / 1.5
   )};
-  --color-contrast--800: ${hslToHex(
+  --color-tertiary-2--800: ${hslToHex(
     h + hr + factor * 2,
     s + sr / 1.75,
     l + lr / 1.75
   )};
-  --color-contrast--900: ${hslToHex(
+  --color-tertiary-2--900: ${hslToHex(
     h + hr + factor * 2,
     s + sr / 2,
     l + lr / 2
   )};
 
   // accent-1 //
-  --color-accent-1--100: ${hslToHex(
-    h + hr + factor / 2,
-    s + sr * 2,
-    l + lr * 2
-  )};
+  --color-accent-1--100: ${hslToHex(h + hr - factor, s + sr * 2, l + lr * 2)};
   --color-accent-1--200: ${hslToHex(
-    h + hr + factor / 2,
+    h + hr - factor,
     s + sr * 1.75,
     l + lr * 1.75
   )};
   --color-accent-1--300: ${hslToHex(
-    h + hr + factor / 2,
+    h + hr - factor,
     s + sr * 1.5,
     l + lr * 1.5
   )};
   --color-accent-1--400: ${hslToHex(
-    h + hr + factor / 2,
+    h + hr - factor,
     s + sr * 1.25,
     l + lr * 1.25
   )};
-  --color-accent-1--500: ${hslToHex(h + hr + factor / 2, s + sr, l + lr)};
+  --color-accent-1--500: ${hslToHex(h + hr - factor, s + sr, l + lr)};
   --color-accent-1--600: ${hslToHex(
-    h + hr + factor / 2,
+    h + hr - factor,
     s + sr / 1.25,
     l + lr / 1.25
   )};
   --color-accent-1--700: ${hslToHex(
-    h + hr + factor / 2,
+    h + hr - factor,
     s + sr / 1.5,
     l + lr / 1.5
   )};
   --color-accent-1--800: ${hslToHex(
-    h + hr + factor / 2,
+    h + hr - factor,
     s + sr / 1.75,
     l + lr / 1.75
   )};
-  --color-accent-1--900: ${hslToHex(
-    h + hr + factor / 2,
-    s + sr / 2,
-    l + lr / 2
-  )};
+  --color-accent-1--900: ${hslToHex(h + hr - factor, s + sr / 2, l + lr / 2)};
 
   // accent-2 //
-  --color-accent-2--100: ${hslToHex(
-    h + hr - factor / 2,
-    s + sr * 2,
-    l + lr * 2
-  )};
+  --color-accent-2--100: ${hslToHex(h + hr + factor, s + sr * 2, l + lr * 2)};
   --color-accent-2--200: ${hslToHex(
-    h + hr - factor / 2,
+    h + hr + factor,
     s + sr * 1.75,
     l + lr * 1.75
   )};
   --color-accent-2--300: ${hslToHex(
-    h + hr - factor / 2,
+    h + hr + factor,
     s + sr * 1.5,
     l + lr * 1.5
   )};
   --color-accent-2--400: ${hslToHex(
-    h + hr - factor / 2,
+    h + hr + factor,
     s + sr * 1.25,
     l + lr * 1.25
   )};
-  --color-accent-2--500: ${hslToHex(h + hr - factor / 2, s + sr, l + lr)};
+  --color-accent-2--500: ${hslToHex(h + hr + factor, s + sr, l + lr)};
   --color-accent-2--600: ${hslToHex(
-    h + hr - factor / 2,
+    h + hr + factor,
     s + sr / 1.25,
     l + lr / 1.25
   )};
   --color-accent-2--700: ${hslToHex(
-    h + hr - factor / 2,
+    h + hr + factor,
     s + sr / 1.5,
     l + lr / 1.5
   )};
   --color-accent-2--800: ${hslToHex(
-    h + hr - factor / 2,
+    h + hr + factor,
     s + sr / 1.75,
     l + lr / 1.75
   )};
-  --color-accent-2--900: ${hslToHex(
-    h + hr - factor / 2,
+  --color-accent-2--900: ${hslToHex(h + hr + factor, s + sr / 2, l + lr / 2)};
+
+  // accent-3 //
+  --color-accent-3--100: ${hslToHex(
+    h + hr - factor * 3,
+    s + sr * 2,
+    l + lr * 2
+  )};
+  --color-accent-3--200: ${hslToHex(
+    h + hr - factor * 3,
+    s + sr * 1.75,
+    l + lr * 1.75
+  )};
+  --color-accent-3--300: ${hslToHex(
+    h + hr - factor * 3,
+    s + sr * 1.5,
+    l + lr * 1.5
+  )};
+  --color-accent-3--400: ${hslToHex(
+    h + hr - factor * 3,
+    s + sr * 1.25,
+    l + lr * 1.25
+  )};
+  --color-accent-3--500: ${hslToHex(h + hr - factor * 3, s + sr, l + lr)};
+  --color-accent-3--600: ${hslToHex(
+    h + hr - factor * 3,
+    s + sr / 1.25,
+    l + lr / 1.25
+  )};
+  --color-accent-3--700: ${hslToHex(
+    h + hr - factor * 3,
+    s + sr / 1.5,
+    l + lr / 1.5
+  )};
+  --color-accent-3--800: ${hslToHex(
+    h + hr - factor * 3,
+    s + sr / 1.75,
+    l + lr / 1.75
+  )};
+  --color-accent-3--900: ${hslToHex(
+    h + hr - factor * 3,
+    s + sr / 2,
+    l + lr / 2
+  )};
+
+  // accent-4 //
+  --color-accent-4--100: ${hslToHex(
+    h + hr + factor * 3,
+    s + sr * 2,
+    l + lr * 2
+  )};
+  --color-accent-4--200: ${hslToHex(
+    h + hr + factor * 3,
+    s + sr * 1.75,
+    l + lr * 1.75
+  )};
+  --color-accent-4--300: ${hslToHex(
+    h + hr + factor * 3,
+    s + sr * 1.5,
+    l + lr * 1.5
+  )};
+  --color-accent-4--400: ${hslToHex(
+    h + hr + factor * 3,
+    s + sr * 1.25,
+    l + lr * 1.25
+  )};
+  --color-accent-4--500: ${hslToHex(h + hr + factor * 3, s + sr, l + lr)};
+  --color-accent-4--600: ${hslToHex(
+    h + hr + factor * 3,
+    s + sr / 1.25,
+    l + lr / 1.25
+  )};
+  --color-accent-4--700: ${hslToHex(
+    h + hr + factor * 3,
+    s + sr / 1.5,
+    l + lr / 1.5
+  )};
+  --color-accent-4--800: ${hslToHex(
+    h + hr + factor * 3,
+    s + sr / 1.75,
+    l + lr / 1.75
+  )};
+  --color-accent-4--900: ${hslToHex(
+    h + hr + factor * 3,
     s + sr / 2,
     l + lr / 2
   )};
@@ -278,7 +364,6 @@ export default function getStyleConfig(hsl, tailwind, ranges) {
 
   const withTailwind = `
 // tailwind.config.js
-
 // https://tailwindcss.com/docs/customizing-colors#using-custom-colors
 
 /** @type {import('tailwindcss').Config} */
@@ -299,28 +384,28 @@ module.exports = {
         900: '${hslToHex(h + hr / 2, s + sr / 2, l + lr / 2)}'
       },
       secondary: {
-        100: '${hslToHex(h + hr + factor, s + sr * 2, l + lr * 2)}',
-        200: '${hslToHex(h + hr + factor, s + sr * 1.75, l + lr * 1.75)}',
-        300: '${hslToHex(h + hr + factor, s + sr * 1.5, l + lr * 1.5)}',
-        400: '${hslToHex(h + hr + factor, s + sr * 1.25, l + lr * 1.25)}',
-        500: '${hslToHex(h + hr + factor, s + sr, l + lr)}',
-        600: '${hslToHex(h + hr + factor, s + sr / 1.25, l + lr / 1.25)}',
-        700: '${hslToHex(h + hr + factor, s + sr / 1.5, l + lr / 1.5)}',
-        800: '${hslToHex(h + hr + factor, s + sr / 1.75, l + lr / 1.75)}',
-        900: '${hslToHex(h + hr + factor, s + sr / 2, l + lr / 2)}'
+        100: '${hslToHex(h + hr + factor * 4, s + sr * 2, l + lr * 2)}',
+        200: '${hslToHex(h + hr + factor * 4, s + sr * 1.75, l + lr * 1.75)}',
+        300: '${hslToHex(h + hr + factor * 4, s + sr * 1.5, l + lr * 1.5)}',
+        400: '${hslToHex(h + hr + factor * 4, s + sr * 1.25, l + lr * 1.25)}',
+        500: '${hslToHex(h + hr + factor * 4, s + sr, l + lr)}',
+        600: '${hslToHex(h + hr + factor * 4, s + sr / 1.25, l + lr / 1.25)}',
+        700: '${hslToHex(h + hr + factor * 4, s + sr / 1.5, l + lr / 1.5)}',
+        800: '${hslToHex(h + hr + factor * 4, s + sr / 1.75, l + lr / 1.75)}',
+        900: '${hslToHex(h + hr + factor * 4, s + sr / 2, l + lr / 2)}'
       },
-      tertiary: {
-        100: '${hslToHex(h + hr - factor, s + sr * 2, l + lr * 2)}',
-        200: '${hslToHex(h + hr - factor, s + sr * 1.75, l + lr * 1.75)}',
-        300: '${hslToHex(h + hr - factor, s + sr * 1.5, l + lr * 1.5)}',
-        400: '${hslToHex(h + hr - factor, s + sr * 1.25, l + lr * 1.25)}',
-        500: '${hslToHex(h + hr - factor, s + sr, l + lr)}',
-        600: '${hslToHex(h + hr - factor, s + sr / 1.25, l + lr / 1.25)}',
-        700: '${hslToHex(h + hr - factor, s + sr / 1.5, l + lr / 1.5)}',
-        800: '${hslToHex(h + hr - factor, s + sr / 1.75, l + lr / 1.75)}',
-        900: '${hslToHex(h + hr - factor, s + sr / 2, l + lr / 2)}'
+      "tertiary-1": {
+        100: '${hslToHex(h + hr - factor * 2, s + sr * 2, l + lr * 2)}',
+        200: '${hslToHex(h + hr - factor * 2, s + sr * 1.75, l + lr * 1.75)}',
+        300: '${hslToHex(h + hr - factor * 2, s + sr * 1.5, l + lr * 1.5)}',
+        400: '${hslToHex(h + hr - factor * 2, s + sr * 1.25, l + lr * 1.25)}',
+        500: '${hslToHex(h + hr - factor * 2, s + sr, l + lr)}',
+        600: '${hslToHex(h + hr - factor * 2, s + sr / 1.25, l + lr / 1.25)}',
+        700: '${hslToHex(h + hr - factor * 2, s + sr / 1.5, l + lr / 1.5)}',
+        800: '${hslToHex(h + hr - factor * 2, s + sr / 1.75, l + lr / 1.75)}',
+        900: '${hslToHex(h + hr - factor * 2, s + sr / 2, l + lr / 2)}'
       },
-      contrast: {
+      "tertiary-2": {
         100: '${hslToHex(h + hr + factor * 2, s + sr * 2, l + lr * 2)}',
         200: '${hslToHex(h + hr + factor * 2, s + sr * 1.75, l + lr * 1.75)}',
         300: '${hslToHex(h + hr + factor * 2, s + sr * 1.5, l + lr * 1.5)}',
@@ -331,27 +416,49 @@ module.exports = {
         800: '${hslToHex(h + hr + factor * 2, s + sr / 1.75, l + lr / 1.75)}',
         900: '${hslToHex(h + hr + factor * 2, s + sr / 2, l + lr / 2)}'
       },
-      accent-1: {
-        100: '${hslToHex(h + hr + factor / 2, s + sr * 2, l + lr * 2)}',
-        200: '${hslToHex(h + hr + factor / 2, s + sr * 1.75, l + lr * 1.75)}',
-        300: '${hslToHex(h + hr + factor / 2, s + sr * 1.5, l + lr * 1.5)}',
-        400: '${hslToHex(h + hr + factor / 2, s + sr * 1.25, l + lr * 1.25)}',
-        500: '${hslToHex(h + hr + factor / 2, s + sr, l + lr)}',
-        600: '${hslToHex(h + hr + factor / 2, s + sr / 1.25, l + lr / 1.25)}',
-        700: '${hslToHex(h + hr + factor / 2, s + sr / 1.5, l + lr / 1.5)}',
-        800: '${hslToHex(h + hr + factor / 2, s + sr / 1.75, l + lr / 1.75)}',
-        900: '${hslToHex(h + hr + factor / 2, s + sr / 2, l + lr / 2)}'
+      "accent-1": {
+        100: '${hslToHex(h + hr - factor, s + sr * 2, l + lr * 2)}',
+        200: '${hslToHex(h + hr - factor, s + sr * 1.75, l + lr * 1.75)}',
+        300: '${hslToHex(h + hr - factor, s + sr * 1.5, l + lr * 1.5)}',
+        400: '${hslToHex(h + hr - factor, s + sr * 1.25, l + lr * 1.25)}',
+        500: '${hslToHex(h + hr - factor, s + sr, l + lr)}',
+        600: '${hslToHex(h + hr - factor, s + sr / 1.25, l + lr / 1.25)}',
+        700: '${hslToHex(h + hr - factor, s + sr / 1.5, l + lr / 1.5)}',
+        800: '${hslToHex(h + hr - factor, s + sr / 1.75, l + lr / 1.75)}',
+        900: '${hslToHex(h + hr - factor, s + sr / 2, l + lr / 2)}'
       },
-      accent-2: {
-        100: '${hslToHex(h + hr - factor / 2, s + sr * 2, l + lr * 2)}',
-        200: '${hslToHex(h + hr - factor / 2, s + sr * 1.75, l + lr * 1.75)}',
-        300: '${hslToHex(h + hr - factor / 2, s + sr * 1.5, l + lr * 1.5)}',
-        400: '${hslToHex(h + hr - factor / 2, s + sr * 1.25, l + lr * 1.25)}',
-        500: '${hslToHex(h + hr - factor / 2, s + sr, l + lr)}',
-        600: '${hslToHex(h + hr - factor / 2, s + sr / 1.25, l + lr / 1.25)}',
-        700: '${hslToHex(h + hr - factor / 2, s + sr / 1.5, l + lr / 1.5)}',
-        800: '${hslToHex(h + hr - factor / 2, s + sr / 1.75, l + lr / 1.75)}',
-        900: '${hslToHex(h + hr - factor / 2, s + sr / 2, l + lr / 2)}'
+      "accent-2": {
+        100: '${hslToHex(h + hr + factor, s + sr * 2, l + lr * 2)}',
+        200: '${hslToHex(h + hr + factor, s + sr * 1.75, l + lr * 1.75)}',
+        300: '${hslToHex(h + hr + factor, s + sr * 1.5, l + lr * 1.5)}',
+        400: '${hslToHex(h + hr + factor, s + sr * 1.25, l + lr * 1.25)}',
+        500: '${hslToHex(h + hr + factor, s + sr, l + lr)}',
+        600: '${hslToHex(h + hr + factor, s + sr / 1.25, l + lr / 1.25)}',
+        700: '${hslToHex(h + hr + factor, s + sr / 1.5, l + lr / 1.5)}',
+        800: '${hslToHex(h + hr + factor, s + sr / 1.75, l + lr / 1.75)}',
+        900: '${hslToHex(h + hr + factor, s + sr / 2, l + lr / 2)}'
+      },
+      "accent-3": {
+        100: '${hslToHex(h + hr - factor * 3, s + sr * 2, l + lr * 2)}',
+        200: '${hslToHex(h + hr - factor * 3, s + sr * 1.75, l + lr * 1.75)}',
+        300: '${hslToHex(h + hr - factor * 3, s + sr * 1.5, l + lr * 1.5)}',
+        400: '${hslToHex(h + hr - factor * 3, s + sr * 1.25, l + lr * 1.25)}',
+        500: '${hslToHex(h + hr - factor * 3, s + sr, l + lr)}',
+        600: '${hslToHex(h + hr - factor * 3, s + sr / 1.25, l + lr / 1.25)}',
+        700: '${hslToHex(h + hr - factor * 3, s + sr / 1.5, l + lr / 1.5)}',
+        800: '${hslToHex(h + hr - factor * 3, s + sr / 1.75, l + lr / 1.75)}',
+        900: '${hslToHex(h + hr - factor * 3, s + sr / 2, l + lr / 2)}'
+      },
+      "accent-4": {
+        100: '${hslToHex(h + hr + factor * 3, s + sr * 2, l + lr * 2)}',
+        200: '${hslToHex(h + hr + factor * 3, s + sr * 1.75, l + lr * 1.75)}',
+        300: '${hslToHex(h + hr + factor * 3, s + sr * 1.5, l + lr * 1.5)}',
+        400: '${hslToHex(h + hr + factor * 3, s + sr * 1.25, l + lr * 1.25)}',
+        500: '${hslToHex(h + hr + factor * 3, s + sr, l + lr)}',
+        600: '${hslToHex(h + hr + factor * 3, s + sr / 1.25, l + lr / 1.25)}',
+        700: '${hslToHex(h + hr + factor * 3, s + sr / 1.5, l + lr / 1.5)}',
+        800: '${hslToHex(h + hr + factor * 3, s + sr / 1.75, l + lr / 1.75)}',
+        900: '${hslToHex(h + hr + factor * 3, s + sr / 2, l + lr / 2)}'
       },
       white: colors.white,
       black: colors.black,

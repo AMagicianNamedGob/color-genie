@@ -3,6 +3,7 @@
 @tailwind utilities;
 @layer base {
   :root {
+
     /* primary */
     --color-primary: calc(var(--primary-color-h) + var(--hRange))
       calc(var(--primary-color-s) + var(--sRange))
@@ -45,230 +46,328 @@
       calc(var(--primary-color-l) + var(--lRange) / 2);
 
     /* secondary */
-
-    --color-secondary: calc(var(--primary-color-h) + var(--hRange) + 90)
+    --color-secondary: calc(var(--primary-color-h) + var(--hRange) + 180)
       calc(var(--primary-color-s) + var(--sRange))
       calc(var(--primary-color-l) + var(--lRange));
 
-    --color-secondary--light: calc(var(--primary-color-h) + var(--hRange) + 90)
+    --color-secondary--light: calc(var(--primary-color-h) + var(--hRange) + 180)
       calc(var(--primary-color-s) + var(--sRange) * 1.25)
       calc(var(--primary-color-l) + var(--lRange) * 1.25);
 
     --color-secondary--lighter: calc(
-        var(--primary-color-h) + var(--hRange) + 90
+        var(--primary-color-h) + var(--hRange) + 180
       )
       calc(var(--primary-color-s) + var(--sRange) * 1.5)
       calc(var(--primary-color-l) + var(--lRange) * 1.5);
 
     --color-secondary--lightest: calc(
-        var(--primary-color-h) + var(--hRange) + 90
+        var(--primary-color-h) + var(--hRange) + 180
       )
       calc(var(--primary-color-s) + var(--sRange) * 1.75)
       calc(var(--primary-color-l) + var(--lRange) * 1.75);
 
     --color-secondary--max-light: calc(
-        var(--primary-color-h) + var(--hRange) + 90
+        var(--primary-color-h) + var(--hRange) + 180
       )
       calc(var(--primary-color-s) + var(--sRange) * 2)
       calc(var(--primary-color-l) + var(--lRange) * 2);
 
-    --color-secondary--dark: calc(var(--primary-color-h) + var(--hRange) + 90)
+    --color-secondary--dark: calc(var(--primary-color-h) + var(--hRange) + 180)
       calc(var(--primary-color-s) + var(--sRange) / 1.25)
       calc(var(--primary-color-l) + var(--lRange) / 1.25);
 
-    --color-secondary--darker: calc(var(--primary-color-h) + var(--hRange) + 90)
+    --color-secondary--darker: calc(var(--primary-color-h) + var(--hRange) + 180)
       calc(var(--primary-color-s) + var(--sRange) / 1.5)
       calc(var(--primary-color-l) + var(--lRange) / 1.5);
 
     --color-secondary--darkest: calc(
-        var(--primary-color-h) + var(--hRange) + 90
+        var(--primary-color-h) + var(--hRange) + 180
       )
       calc(var(--primary-color-s) + var(--sRange) / 1.75)
       calc(var(--primary-color-l) + var(--lRange) / 1.75);
 
     --color-secondary--max-dark: calc(
+        var(--primary-color-h) + var(--hRange) + 180
+      )
+      calc(var(--primary-color-s) + var(--sRange) / 2)
+      calc(var(--primary-color-l) + var(--lRange) / 2);
+
+
+
+    /* tertiary-1 */
+
+    --color-tertiary-1: calc(var(--primary-color-h) + var(--hRange) - 90)
+      calc(var(--primary-color-s) + var(--sRange))
+      calc(var(--primary-color-l) + var(--lRange));
+
+    --color-tertiary-1--light: calc(var(--primary-color-h) + var(--hRange) - 90)
+      calc(var(--primary-color-s) + var(--sRange) * 1.25)
+      calc(var(--primary-color-l) + var(--lRange) * 1.25);
+
+    --color-tertiary-1--lighter: calc(var(--primary-color-h) + var(--hRange) - 90)
+      calc(var(--primary-color-s) + var(--sRange) * 1.5)
+      calc(var(--primary-color-l) + var(--lRange) * 1.5);
+
+    --color-tertiary-1--lightest: calc(
+        var(--primary-color-h) + var(--hRange) - 90
+      )
+      calc(var(--primary-color-s) + var(--sRange) * 1.75)
+      calc(var(--primary-color-l) + var(--lRange) * 1.75);
+
+    --color-tertiary-1--max-light: calc(
+        var(--primary-color-h) + var(--hRange) - 90
+      )
+      calc(var(--primary-color-s) + var(--sRange) * 2)
+      calc(var(--primary-color-l) + var(--lRange) * 2);
+
+    --color-tertiary-1--dark: calc(var(--primary-color-h) + var(--hRange) - 90)
+      calc(var(--primary-color-s) + var(--sRange) / 1.25)
+      calc(var(--primary-color-l) + var(--lRange) / 1.25);
+
+    --color-tertiary-1--darker: calc(var(--primary-color-h) + var(--hRange) - 90)
+      calc(var(--primary-color-s) + var(--sRange) / 1.5)
+      calc(var(--primary-color-l) + var(--lRange) / 1.5);
+
+    --color-tertiary-1--darkest: calc(var(--primary-color-h) + var(--hRange) - 90)
+      calc(var(--primary-color-s) + var(--sRange) / 1.75)
+      calc(var(--primary-color-l) + var(--lRange) / 1.75);
+
+    --color-tertiary-1--max-dark: calc(
+        var(--primary-color-h) + var(--hRange) - 90
+      )
+      calc(var(--primary-color-s) + var(--sRange) / 2)
+      calc(var(--primary-color-l) + var(--lRange) / 2);
+
+    /* tertiary-2 */
+
+    --color-tertiary-2: calc(var(--primary-color-h) + var(--hRange) + 90)
+      calc(var(--primary-color-s) + var(--sRange))
+      calc(var(--primary-color-l) + var(--lRange));
+
+    --color-tertiary-2--light: calc(var(--primary-color-h) + var(--hRange) + 90)
+      calc(var(--primary-color-s) + var(--sRange) * 1.25)
+      calc(var(--primary-color-l) + var(--lRange) * 1.25);
+
+    --color-tertiary-2--lighter: calc(
+        var(--primary-color-h) + var(--hRange) + 90
+      )
+      calc(var(--primary-color-s) + var(--sRange) * 1.5)
+      calc(var(--primary-color-l) + var(--lRange) * 1.5);
+
+    --color-tertiary-2--lightest: calc(
+        var(--primary-color-h) + var(--hRange) + 90
+      )
+      calc(var(--primary-color-s) + var(--sRange) * 1.75)
+      calc(var(--primary-color-l) + var(--lRange) * 1.75);
+
+    --color-tertiary-2--max-light: calc(
+        var(--primary-color-h) + var(--hRange) + 90
+      )
+      calc(var(--primary-color-s) + var(--sRange) * 2)
+      calc(var(--primary-color-l) + var(--lRange) * 2);
+
+    --color-tertiary-2--dark: calc(var(--primary-color-h) + var(--hRange) + 90)
+      calc(var(--primary-color-s) + var(--sRange) / 1.25)
+      calc(var(--primary-color-l) + var(--lRange) / 1.25);
+
+    --color-tertiary-2--darker: calc(var(--primary-color-h) + var(--hRange) + 90)
+      calc(var(--primary-color-s) + var(--sRange) / 1.5)
+      calc(var(--primary-color-l) + var(--lRange) / 1.5);
+
+    --color-tertiary-2--darkest: calc(
+        var(--primary-color-h) + var(--hRange) + 90
+      )
+      calc(var(--primary-color-s) + var(--sRange) / 1.75)
+      calc(var(--primary-color-l) + var(--lRange) / 1.75);
+
+    --color-tertiary-2--max-dark: calc(
         var(--primary-color-h) + var(--hRange) + 90
       )
       calc(var(--primary-color-s) + var(--sRange) / 2)
       calc(var(--primary-color-l) + var(--lRange) / 2);
 
-    /* tertiary */
 
-    --color-tertiary: calc(var(--primary-color-h) + var(--hRange) - 90)
-      calc(var(--primary-color-s) + var(--sRange))
-      calc(var(--primary-color-l) + var(--lRange));
-
-    --color-tertiary--light: calc(var(--primary-color-h) + var(--hRange) - 90)
-      calc(var(--primary-color-s) + var(--sRange) * 1.25)
-      calc(var(--primary-color-l) + var(--lRange) * 1.25);
-
-    --color-tertiary--lighter: calc(var(--primary-color-h) + var(--hRange) - 90)
-      calc(var(--primary-color-s) + var(--sRange) * 1.5)
-      calc(var(--primary-color-l) + var(--lRange) * 1.5);
-
-    --color-tertiary--lightest: calc(
-        var(--primary-color-h) + var(--hRange) - 90
-      )
-      calc(var(--primary-color-s) + var(--sRange) * 1.75)
-      calc(var(--primary-color-l) + var(--lRange) * 1.75);
-
-    --color-tertiary--max-light: calc(
-        var(--primary-color-h) + var(--hRange) - 90
-      )
-      calc(var(--primary-color-s) + var(--sRange) * 2)
-      calc(var(--primary-color-l) + var(--lRange) * 2);
-
-    --color-tertiary--dark: calc(var(--primary-color-h) + var(--hRange) - 90)
-      calc(var(--primary-color-s) + var(--sRange) / 1.25)
-      calc(var(--primary-color-l) + var(--lRange) / 1.25);
-
-    --color-tertiary--darker: calc(var(--primary-color-h) + var(--hRange) - 90)
-      calc(var(--primary-color-s) + var(--sRange) / 1.5)
-      calc(var(--primary-color-l) + var(--lRange) / 1.5);
-
-    --color-tertiary--darkest: calc(var(--primary-color-h) + var(--hRange) - 90)
-      calc(var(--primary-color-s) + var(--sRange) / 1.75)
-      calc(var(--primary-color-l) + var(--lRange) / 1.75);
-
-    --color-tertiary--max-dark: calc(
-        var(--primary-color-h) + var(--hRange) - 90
-      )
-      calc(var(--primary-color-s) + var(--sRange) / 2)
-      calc(var(--primary-color-l) + var(--lRange) / 2);
-
-    /* contrast */
-    --color-contrast: calc(var(--primary-color-h) + var(--hRange) + 180)
-      calc(var(--primary-color-s) + var(--sRange))
-      calc(var(--primary-color-l) + var(--lRange));
-
-    --color-contrast--light: calc(var(--primary-color-h) + var(--hRange) + 180)
-      calc(var(--primary-color-s) + var(--sRange) * 1.25)
-      calc(var(--primary-color-l) + var(--lRange) * 1.25);
-
-    --color-contrast--lighter: calc(
-        var(--primary-color-h) + var(--hRange) + 180
-      )
-      calc(var(--primary-color-s) + var(--sRange) * 1.5)
-      calc(var(--primary-color-l) + var(--lRange) * 1.5);
-
-    --color-contrast--lightest: calc(
-        var(--primary-color-h) + var(--hRange) + 180
-      )
-      calc(var(--primary-color-s) + var(--sRange) * 1.75)
-      calc(var(--primary-color-l) + var(--lRange) * 1.75);
-
-    --color-contrast--max-light: calc(
-        var(--primary-color-h) + var(--hRange) + 180
-      )
-      calc(var(--primary-color-s) + var(--sRange) * 2)
-      calc(var(--primary-color-l) + var(--lRange) * 2);
-
-    --color-contrast--dark: calc(var(--primary-color-h) + var(--hRange) + 180)
-      calc(var(--primary-color-s) + var(--sRange) / 1.25)
-      calc(var(--primary-color-l) + var(--lRange) / 1.25);
-
-    --color-contrast--darker: calc(var(--primary-color-h) + var(--hRange) + 180)
-      calc(var(--primary-color-s) + var(--sRange) / 1.5)
-      calc(var(--primary-color-l) + var(--lRange) / 1.5);
-
-    --color-contrast--darkest: calc(
-        var(--primary-color-h) + var(--hRange) + 180
-      )
-      calc(var(--primary-color-s) + var(--sRange) / 1.75)
-      calc(var(--primary-color-l) + var(--lRange) / 1.75);
-
-    --color-contrast--max-dark: calc(
-        var(--primary-color-h) + var(--hRange) + 180
-      )
-      calc(var(--primary-color-s) + var(--sRange) / 2)
-      calc(var(--primary-color-l) + var(--lRange) / 2);
 
     /* accent-1 */
-    --color-accent-1: calc(var(--primary-color-h) + var(--hRange) + 45)
+    --color-accent-1: calc(var(--primary-color-h) + var(--hRange) - 45)
       calc(var(--primary-color-s) + var(--sRange))
       calc(var(--primary-color-l) + var(--lRange));
 
-    --color-accent-1--light: calc(var(--primary-color-h) + var(--hRange) + 45)
+    --color-accent-1--light: calc(var(--primary-color-h) + var(--hRange) - 45)
       calc(var(--primary-color-s) + var(--sRange) * 1.25)
       calc(var(--primary-color-l) + var(--lRange) * 1.25);
 
-    --color-accent-1--lighter: calc(var(--primary-color-h) + var(--hRange) + 45)
+    --color-accent-1--lighter: calc(var(--primary-color-h) + var(--hRange) - 45)
       calc(var(--primary-color-s) + var(--sRange) * 1.5)
       calc(var(--primary-color-l) + var(--lRange) * 1.5);
 
     --color-accent-1--lightest: calc(
-        var(--primary-color-h) + var(--hRange) + 45
+        var(--primary-color-h) + var(--hRange) - 45
       )
       calc(var(--primary-color-s) + var(--sRange) * 1.75)
       calc(var(--primary-color-l) + var(--lRange) * 1.75);
 
     --color-accent-1--max-light: calc(
-        var(--primary-color-h) + var(--hRange) + 45
+        var(--primary-color-h) + var(--hRange) - 45
       )
       calc(var(--primary-color-s) + var(--sRange) * 2)
       calc(var(--primary-color-l) + var(--lRange) * 2);
 
-    --color-accent-1--dark: calc(var(--primary-color-h) + var(--hRange) + 45)
+    --color-accent-1--dark: calc(var(--primary-color-h) + var(--hRange) - 45)
       calc(var(--primary-color-s) + var(--sRange) / 1.25)
       calc(var(--primary-color-l) + var(--lRange) / 1.25);
 
-    --color-accent-1--darker: calc(var(--primary-color-h) + var(--hRange) + 45)
+    --color-accent-1--darker: calc(var(--primary-color-h) + var(--hRange) - 45)
       calc(var(--primary-color-s) + var(--sRange) / 1.5)
       calc(var(--primary-color-l) + var(--lRange) / 1.5);
 
-    --color-accent-1--darkest: calc(var(--primary-color-h) + var(--hRange) + 45)
+    --color-accent-1--darkest: calc(var(--primary-color-h) + var(--hRange) - 45)
       calc(var(--primary-color-s) + var(--sRange) / 1.75)
       calc(var(--primary-color-l) + var(--lRange) / 1.75);
 
     --color-accent-1--max-dark: calc(
-        var(--primary-color-h) + var(--hRange) + 45
+        var(--primary-color-h) + var(--hRange) - 45
       )
       calc(var(--primary-color-s) + var(--sRange) / 2)
       calc(var(--primary-color-l) + var(--lRange) / 2);
 
     /* accent-2 */
 
-    --color-accent-2: calc(var(--primary-color-h) + var(--hRange) - 45)
+    --color-accent-2: calc(var(--primary-color-h) + var(--hRange) + 45)
       calc(var(--primary-color-s) + var(--sRange))
       calc(var(--primary-color-l) + var(--lRange));
 
-    --color-accent-2--light: calc(var(--primary-color-h) + var(--hRange) - 45)
+    --color-accent-2--light: calc(var(--primary-color-h) + var(--hRange) + 45)
       calc(var(--primary-color-s) + var(--sRange) * 1.25)
       calc(var(--primary-color-l) + var(--lRange) * 1.25);
 
-    --color-accent-2--lighter: calc(var(--primary-color-h) + var(--hRange) - 45)
+    --color-accent-2--lighter: calc(var(--primary-color-h) + var(--hRange) + 45)
       calc(var(--primary-color-s) + var(--sRange) * 1.5)
       calc(var(--primary-color-l) + var(--lRange) * 1.5);
 
     --color-accent-2--lightest: calc(
-        var(--primary-color-h) + var(--hRange) - 45
+        var(--primary-color-h) + var(--hRange) + 45
       )
       calc(var(--primary-color-s) + var(--sRange) * 1.75)
       calc(var(--primary-color-l) + var(--lRange) * 1.75);
 
     --color-accent-2--max-light: calc(
-        var(--primary-color-h) + var(--hRange) - 45
+        var(--primary-color-h) + var(--hRange) + 45
       )
       calc(var(--primary-color-s) + var(--sRange) * 2)
       calc(var(--primary-color-l) + var(--lRange) * 2);
 
-    --color-accent-2--dark: calc(var(--primary-color-h) + var(--hRange) - 45)
+    --color-accent-2--dark: calc(var(--primary-color-h) + var(--hRange) + 45)
       calc(var(--primary-color-s) + var(--sRange) / 1.25)
       calc(var(--primary-color-l) + var(--lRange) / 1.25);
 
-    --color-accent-2--darker: calc(var(--primary-color-h) + var(--hRange) - 45)
+    --color-accent-2--darker: calc(var(--primary-color-h) + var(--hRange) + 45)
       calc(var(--primary-color-s) + var(--sRange) / 1.5)
       calc(var(--primary-color-l) + var(--lRange) / 1.5);
 
-    --color-accent-2--darkest: calc(var(--primary-color-h) + var(--hRange) - 45)
+    --color-accent-2--darkest: calc(var(--primary-color-h) + var(--hRange) + 45)
       calc(var(--primary-color-s) + var(--sRange) / 1.75)
       calc(var(--primary-color-l) + var(--lRange) / 1.75);
 
     --color-accent-2--max-dark: calc(
-        var(--primary-color-h) + var(--hRange) - 45
+        var(--primary-color-h) + var(--hRange) + 45
       )
       calc(var(--primary-color-s) + var(--sRange) / 2)
       calc(var(--primary-color-l) + var(--lRange) / 2);
+
+    /* accent-3 */
+      --color-accent-3: calc(var(--primary-color-h) + var(--hRange) - 135)
+      calc(var(--primary-color-s) + var(--sRange))
+      calc(var(--primary-color-l) + var(--lRange));
+
+    --color-accent-3--light: calc(var(--primary-color-h) + var(--hRange) - 135)
+      calc(var(--primary-color-s) + var(--sRange) * 1.25)
+      calc(var(--primary-color-l) + var(--lRange) * 1.25);
+
+    --color-accent-3--lighter: calc(var(--primary-color-h) + var(--hRange) - 135)
+      calc(var(--primary-color-s) + var(--sRange) * 1.5)
+      calc(var(--primary-color-l) + var(--lRange) * 1.5);
+
+    --color-accent-3--lightest: calc(
+        var(--primary-color-h) + var(--hRange) - 135
+      )
+      calc(var(--primary-color-s) + var(--sRange) * 1.75)
+      calc(var(--primary-color-l) + var(--lRange) * 1.75);
+
+    --color-accent-3--max-light: calc(
+        var(--primary-color-h) + var(--hRange) - 135
+      )
+      calc(var(--primary-color-s) + var(--sRange) * 2)
+      calc(var(--primary-color-l) + var(--lRange) * 2);
+
+    --color-accent-3--dark: calc(var(--primary-color-h) + var(--hRange) - 135)
+      calc(var(--primary-color-s) + var(--sRange) / 1.25)
+      calc(var(--primary-color-l) + var(--lRange) / 1.25);
+
+    --color-accent-3--darker: calc(var(--primary-color-h) + var(--hRange) - 135)
+      calc(var(--primary-color-s) + var(--sRange) / 1.5)
+      calc(var(--primary-color-l) + var(--lRange) / 1.5);
+
+    --color-accent-3--darkest: calc(var(--primary-color-h) + var(--hRange) - 135)
+      calc(var(--primary-color-s) + var(--sRange) / 1.75)
+      calc(var(--primary-color-l) + var(--lRange) / 1.75);
+
+    --color-accent-3--max-dark: calc(
+        var(--primary-color-h) + var(--hRange) - 135
+      )
+      calc(var(--primary-color-s) + var(--sRange) / 2)
+      calc(var(--primary-color-l) + var(--lRange) / 2);
+
+    /* accent-4 */
+
+    --color-accent-4: calc(var(--primary-color-h) + var(--hRange) + 135)
+      calc(var(--primary-color-s) + var(--sRange))
+      calc(var(--primary-color-l) + var(--lRange));
+
+    --color-accent-4--light: calc(var(--primary-color-h) + var(--hRange) + 135)
+      calc(var(--primary-color-s) + var(--sRange) * 1.25)
+      calc(var(--primary-color-l) + var(--lRange) * 1.25);
+
+    --color-accent-4--lighter: calc(var(--primary-color-h) + var(--hRange) + 135)
+      calc(var(--primary-color-s) + var(--sRange) * 1.5)
+      calc(var(--primary-color-l) + var(--lRange) * 1.5);
+
+    --color-accent-4--lightest: calc(
+        var(--primary-color-h) + var(--hRange) + 135
+      )
+      calc(var(--primary-color-s) + var(--sRange) * 1.75)
+      calc(var(--primary-color-l) + var(--lRange) * 1.75);
+
+    --color-accent-4--max-light: calc(
+        var(--primary-color-h) + var(--hRange) + 135
+      )
+      calc(var(--primary-color-s) + var(--sRange) * 2)
+      calc(var(--primary-color-l) + var(--lRange) * 2);
+
+    --color-accent-4--dark: calc(var(--primary-color-h) + var(--hRange) + 135)
+      calc(var(--primary-color-s) + var(--sRange) / 1.25)
+      calc(var(--primary-color-l) + var(--lRange) / 1.25);
+
+    --color-accent-4--darker: calc(var(--primary-color-h) + var(--hRange) + 135)
+      calc(var(--primary-color-s) + var(--sRange) / 1.5)
+      calc(var(--primary-color-l) + var(--lRange) / 1.5);
+
+    --color-accent-4--darkest: calc(var(--primary-color-h) + var(--hRange) + 135)
+      calc(var(--primary-color-s) + var(--sRange) / 1.75)
+      calc(var(--primary-color-l) + var(--lRange) / 1.75);
+
+    --color-accent-4--max-dark: calc(
+        var(--primary-color-h) + var(--hRange) + 135
+      )
+      calc(var(--primary-color-s) + var(--sRange) / 2)
+      calc(var(--primary-color-l) + var(--lRange) / 2);
+
+
+
+
+
+
+
 
     --primary-color-h: 180;
     --primary-color-s: 50;
@@ -336,7 +435,7 @@
 
   button,
   .button {
-    @apply bg-primary-500 text-secondary-200 border-2 border-secondary-200 rounded-md py-3 px-5 transition-all duration-200 ease-in-out hover:cursor-pointer;
+    @apply bg-primary-500 text-tertiary-2-200 border-2 border-tertiary-2-200 rounded-md py-3 px-5 transition-all duration-200 ease-in-out hover:cursor-pointer;
   }
 
   label {

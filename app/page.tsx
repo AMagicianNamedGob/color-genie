@@ -30,20 +30,28 @@ export default function Home() {
               />
             ))}
           </section>
-          <h2 className="mt-2 md:mt-4 ml-2 light:text-transparent dark:text-transparent bg-clip-text bg-gradient-to-br from-tertiary-100 to-tertiary-900">
-            Tertiary
+          <h2 className="mt-2 md:mt-4 ml-2 light:text-transparent dark:text-transparent bg-clip-text bg-gradient-to-br from-tertiary-1-100 to-tertiary-1-900">
+            Tertiary-1
           </h2>
           <section className="grid grid-cols-9 mt-2 gap-1">
             {[...Array(9)].map((_, i) => (
-              <Blot key={i} color={`tertiary-${i + 1}00`} name={`${i + 1}00`} />
+              <Blot
+                key={i}
+                color={`tertiary-1-${i + 1}00`}
+                name={`${i + 1}00`}
+              />
             ))}
           </section>
-          <h2 className="mt-2 md:mt-4 ml-2 light:text-transparent dark:text-transparent bg-clip-text bg-gradient-to-br from-contrast-100 to-contrast-900">
-            Contrast
+          <h2 className="mt-2 md:mt-4 ml-2 light:text-transparent dark:text-transparent bg-clip-text bg-gradient-to-br from-tertiary-2-100 to-tertiary-2-900">
+            Tertiary-2
           </h2>
           <section className="grid grid-cols-9 mt-2 gap-1">
             {[...Array(9)].map((_, i) => (
-              <Blot key={i} color={`contrast-${i + 1}00`} name={`${i + 1}00`} />
+              <Blot
+                key={i}
+                color={`tertiary-2-${i + 1}00`}
+                name={`${i + 1}00`}
+              />
             ))}
           </section>
           <h2 className="mt-2 md:mt-4 ml-2 light:text-transparent dark:text-transparent bg-clip-text bg-gradient-to-br from-accent-1-100 to-accent-1-900">
@@ -60,6 +68,22 @@ export default function Home() {
           <section className="grid grid-cols-9 mt-2 gap-1">
             {[...Array(9)].map((_, i) => (
               <Blot key={i} color={`accent-2-${i + 1}00`} name={`${i + 1}00`} />
+            ))}
+          </section>
+          <h2 className="mt-2 md:mt-4 ml-2 light:text-transparent dark:text-transparent bg-clip-text bg-gradient-to-br from-accent-3-100 to-accent-3-900">
+            Accent-3
+          </h2>
+          <section className="grid grid-cols-9 mt-2 gap-1">
+            {[...Array(9)].map((_, i) => (
+              <Blot key={i} color={`accent-3-${i + 1}00`} name={`${i + 1}00`} />
+            ))}
+          </section>
+          <h2 className="mt-2 md:mt-4 ml-2 light:text-transparent dark:text-transparent bg-clip-text bg-gradient-to-br from-accent-4-100 to-accent-4-900">
+            Accent-4
+          </h2>
+          <section className="grid grid-cols-9 mt-2 gap-1">
+            {[...Array(9)].map((_, i) => (
+              <Blot key={i} color={`accent-4-${i + 1}00`} name={`${i + 1}00`} />
             ))}
           </section>
         </div>
