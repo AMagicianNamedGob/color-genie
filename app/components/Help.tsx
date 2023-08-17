@@ -5,11 +5,11 @@ export default function Help() {
         How Do I Use This?
       </h2>
       <p className="text-lg leading-8 mt-8 mt:mb-10">
-        Simply enter a hex code in the input field and click the 'generate code'
+        Simply enter a hex code in the input field and click the &apos;generate code&apos;
         button. You can also use the paint brush button to open the picker and
         select a color. The gear button is useful to to help zero in the
         palette, especially if you select a very bright or very dark base color.
-        Once you've generated a palette, you can copy the CSS code to your
+        Once you&apos;ve generated a palette, you can copy the CSS code to your
         clipboard and paste into you own stylesheet. The code generator also
         includes a Tailwind toggle if you want to{" "}
         <a href="https://tailwindcss.com/docs/customizing-colors#using-custom-colors">
@@ -27,7 +27,7 @@ export default function Help() {
         any project. Most importantly it had to be simple to use.
       </p>
       <p className="text-lg leading-8 mt-2">
-        I hope you find this tool useful. If you're curious to read a bit more
+        I hope you find this tool useful. If you&apos;re curious to read a bit more
         about how I built this, check out my{" "}
         <a href="https://jaredmakes.com/blog/">blog</a>.
       </p>
