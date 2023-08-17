@@ -1,23 +1,31 @@
 "use client";
 import { useState, useEffect, Suspense } from "react";
-import clsx from "clsx";
 import { useDebouncyEffect } from "use-debouncy";
 import { HexColorPicker, HexColorInput } from "react-colorful";
 import { hexToHSL } from "../lib/colorConvert";
 import ThemeToggle from "./ThemeToggle";
+import FormToggleButton from "./FormToggleButton";
 import styles from "./Form.module.css";
 import Output from "./Output";
 
 export default function Form() {
+  const defaults = {
+    hexColor: "#144A49",
+    lRange: "15",
+    hRange: "6",
+    sRange: "75",
+    hsl: { h: 179, s: 57, l: 18 },
+  };
+
   // ? can useRef ? //
-  const [hexColor, setHexColor] = useState("#701397");
-  const [lRange, setLRange] = useState("15");
-  const [hRange, setHRange] = useState("6");
-  const [sRange, setSRange] = useState("75");
-  const [hsl, setHsl] = useState({ h: 282, s: 78, l: 33 });
+  const [hexColor, setHexColor] = useState(defaults.hexColor);
+  const [lRange, setLRange] = useState(defaults.lRange);
+  const [hRange, setHRange] = useState(defaults.hRange);
+  const [sRange, setSRange] = useState(defaults.sRange);
+  const [hsl, setHsl] = useState(defaults.hsl);
 
   // toggles and triggers
-  const [hexColorEffect, setHexColorEffect] = useState("#701397");
+  const [hexColorEffect, setHexColorEffect] = useState(defaults.hexColor);
   const [picker, setPicker] = useState(false);
   const [settings, setSettings] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -47,10 +55,11 @@ export default function Form() {
   function onReset(e: any) {
     e.preventDefault();
     setSubmitted(false);
-    setHexColorEffect("#701397");
-    setLRange("15");
-    setHRange("6");
-    setSRange("75");
+    setHexColorEffect(defaults.hexColor);
+    setHsl(defaults.hsl);
+    setLRange(defaults.lRange);
+    setHRange(defaults.hRange);
+    setSRange(defaults.sRange);
     setTailwindSelected(false);
   }
 
@@ -78,8 +87,11 @@ export default function Form() {
                 checked={tailwindSelected}
                 onChange={(e) => setTailwindSelected(e.target.checked)}
               />
-              <label htmlFor="showTailwind" className="uppercase text-base mt-2">
-               Tailwind me!
+              <label
+                htmlFor="showTailwind"
+                className="uppercase text-base mt-2"
+              >
+                Tailwind me!
               </label>
               <input
                 type="reset"
@@ -117,25 +129,29 @@ export default function Form() {
             name="hexColor"
           />
           <div className="flex flex-row flex-wrap justify-start items-center w-full mb-2 gap-2 lg:justify-between">
-            <button
-              className="w-14 h-14 flex justify-center items-center text-2xl text-black border-2 border-zinc-500 shadow-inner shadow-white bg-gradient-to-br from-primary-900 to-secondary-100 hover:cursor-pointer hover:from-primary-100 hover:to-primary-900"
+            <FormToggleButton
               onClick={(e) => togglePicker(e)}
-              role="presentation"
-            >
-              🎨
-            </button>
-            <button
-              className="w-14 h-14 text-4xl flex justify-center items-center text-zinc-800 border-2 border-zinc-500 shadow-inner shadow-white bg-gradient-to-br from-primary-900 to-secondary-100 hover:cursor-pointer hover:from-primary-100 hover:to-primary-900"
+              active={picker}
+              icon={{
+                src: "icons/brush.svg",
+              }}
+            />
+            <FormToggleButton
               onClick={(e) => toggleSettings(e)}
-              role="presentation"
-            >⚙
-            </button>
+              active={settings}
+              icon={{
+                src: "icons/cog.svg",
+              }}
+            />
             <ThemeToggle />
-            <button
-              className="hidden w-14 h-14 text-4xl flex justify-center items-center no-underline border-2 rounded-lg border-zinc-500 shadow-inner shadow-white bg-gradient-to-br from-primary-900 to-secondary-100 hover:cursor-pointer hover:from-primary-100 hover:to-primary-900"
-              role="presentation"
-            >❔
-            </button>
+                  <FormToggleButton
+              onClick={(e) => e.preventDefault()}
+              active={false}
+              icon={{
+                src: "icons/question.svg",
+              }}
+            />
+
             <input
               type="submit"
               value={submitted ? "Reset" : "Generate Code"}
