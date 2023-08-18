@@ -36,7 +36,7 @@ export default function Help() {
       <p className="text-lg leading-8 mt-3">
         I hope you find this tool useful. If you&apos;re curious to read a bit
         more about how I built this, check out my{" "}
-        <a href="https://jaredmakes.com/blog/">blog</a>.
+        <a href="https://www.jaredmakes.com/blog/creating-a-simple-palette-generator">blog</a>.
       </p>
     </>
   );
