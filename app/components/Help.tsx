@@ -19,7 +19,7 @@ export default function Help() {
       </p>
       <p className="text-lg leading-8 mt-3">
         Included in the generated code are several ranges in grey. All together
-        the generated code will create over 90 different colors to use in your
+        the generated code will create over 100 different options to use in your
         next project. My suggestion is to pick two or three ranges plus one grey
         range and stick to using those.
       </p>
