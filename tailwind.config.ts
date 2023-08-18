@@ -103,14 +103,14 @@ module.exports = {
       black: colors.black,
       slate: colors.slate,
       zinc: colors.zinc,
-      gray: colors.neutral,
+      stone: colors.stone,
       transparent: colors.transparent,
     },
   },
   safelist: [
     {
       pattern:
-        /((bg|text)-(primary|secondary|tertiary-1|tertiary-2|accent-1|accent-2|accent-3|accent-4)-(100|200|300|400|500|600|700|800|900))/,
+        /((bg|text)-(slate|zinc|stone|primary|secondary|tertiary-1|tertiary-2|accent-1|accent-2|accent-3|accent-4)-(100|200|300|400|500|600|700|800|900))/,
     },
   ],
 

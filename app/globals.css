@@ -362,13 +362,6 @@
       calc(var(--primary-color-s) + var(--sRange) / 2)
       calc(var(--primary-color-l) + var(--lRange) / 2);
 
-
-
-
-
-
-
-
     --primary-color-h: 180;
     --primary-color-s: 50;
     --primary-color-l: 50;

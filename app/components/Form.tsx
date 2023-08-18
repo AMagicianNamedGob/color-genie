@@ -11,10 +11,10 @@ import Output from "./Output";
 
 export default function Form() {
   const defaults = {
-    hexColor: "#155E97",
+    hexColor: "#385A62",
     lRange: "15",
     hRange: "6",
-    sRange: "75",
+    sRange: "45",
     hsl: { h: 206, s: 76, l: 34 },
   };
 
@@ -76,6 +76,18 @@ export default function Form() {
     setSettings(!settings);
   }
 
+  function randomize(e: any) {
+    e.preventDefault();
+    const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+    const randomHue = Math.floor(Math.random() * 11);
+    const randomSat = Math.floor(Math.random() * 100);
+    const randomLum = Math.floor(Math.random() * 31);
+    setHRange(randomHue.toString());
+    setSRange(randomSat.toString());
+    setLRange(randomLum.toString());
+    setHexColorEffect(`#${randomColor}`);
+  }
+
   return (
     <>
       <section className="max-w-3xl mx-auto">
@@ -125,13 +137,16 @@ export default function Form() {
           >
             Hex Code
           </label>
+          <div className="flex flex-row justify-start self-start items-center">
           <HexColorInput
-            className="bg-zinc-300 border-2 border-zinc-500 font-semibold tracking-wide uppercase rounded-xl w-[183px] self-start focus:border-accent-500 p-2 mb-2"
+            className="bg-zinc-300 border-2 border-zinc-500 font-semibold tracking-wide uppercase rounded-lg w-[183px] self-start focus:border-accent-500 p-4 mr-2"
             color={hexColor}
             onChange={setHexColorEffect}
             name="hexColor"
           />
-          <div className="flex flex-row flex-wrap justify-start items-center w-full mb-2 gap-2 lg:justify-between">
+          <FormToggleButton active={false} icon={{ src: "icons/rando.svg" }} onClick={(e)=> randomize(e) } />
+          </div>
+          <div className="flex flex-row flex-wrap justify-start items-center w-full my-2 gap-2 lg:justify-between">
             <FormToggleButton
               onClick={(e) => togglePicker(e)}
               active={picker}
@@ -161,7 +176,7 @@ export default function Form() {
             <input
               type="submit"
               value={submitted ? "Reset" : "Generate Code"}
-              className="h-14 w-full rounded-xl border-2 border-zinc-500 font-bold tracking-widest uppercase shadow-inner shadow-white bg-gradient-to-br from-primary-900 to-secondary-100 hover:cursor-pointer hover:from-primary-100 hover:to-primary-900 md:w-8/12"
+              className="h-14 w-full rounded-lg border-2 border-zinc-500 font-bold tracking-widest uppercase shadow-inner shadow-white bg-gradient-to-br from-primary-900 to-secondary-100 hover:cursor-pointer hover:from-primary-100 hover:to-primary-900 md:w-8/12"
             />
           </div>
           <div className="w-full">

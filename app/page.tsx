@@ -86,6 +86,30 @@ export default function Home() {
               <Blot key={i} color={`accent-4-${i + 1}00`} name={`${i + 1}00`} />
             ))}
           </section>
+          <h2 className="mt-2 md:mt-4 ml-2 light:text-transparent dark:text-transparent bg-clip-text bg-gradient-to-br from-slate-100 to-slate-900">
+            Slate
+          </h2>
+          <section className="grid grid-cols-9 mt-2 gap-1">
+            {[...Array(9)].map((_, i) => (
+              <Blot key={i} color={`slate-${i + 1}00`} name={`${i + 1}00`} />
+            ))}
+          </section>
+          <h2 className="mt-2 md:mt-4 ml-2 light:text-transparent dark:text-transparent bg-clip-text bg-gradient-to-br from-stone-100 to-stone-900">
+            Stone
+          </h2>
+          <section className="grid grid-cols-9 mt-2 gap-1">
+            {[...Array(9)].map((_, i) => (
+              <Blot key={i} color={`stone-${i + 1}00`} name={`${i + 1}00`} />
+            ))}
+          </section>
+          <h2 className="mt-2 md:mt-4 ml-2 light:text-transparent dark:text-transparent bg-clip-text bg-gradient-to-br from-zinc-100 to-zinc-900">
+            Zinc
+          </h2>
+          <section className="grid grid-cols-9 mt-2 gap-1">
+            {[...Array(9)].map((_, i) => (
+              <Blot key={i} color={`zinc-${i + 1}00`} name={`${i + 1}00`} />
+            ))}
+          </section>
         </div>
       </main>
       <div className="max-w-3xl mx-auto">

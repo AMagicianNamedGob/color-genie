@@ -84,7 +84,7 @@ export default function getStyleConfig(hsl, tailwind, ranges) {
 
   // tertiary-1 //
   --color-tertiary-1--100: ${hslToHex(
-    h + hr - factor * 2,
+    h + hr - (factor * 2),
     s + sr * 2,
     l + lr * 2
   )};
@@ -324,38 +324,38 @@ export default function getStyleConfig(hsl, tailwind, ranges) {
     l + lr / 2
   )};
 
-  // neutral //
-  --color-grey-1: #f2f2f2;
-  --color-grey-2: #d9d9d9;
-  --color-grey-3: #b0b0b0;
-  --color-grey-4: #7f7f7f;
-  --color-grey-5: #666666;
-  --color-grey-6: #4d4d4d;
-  --color-grey-7: #333333;
-  --color-grey-8: #1a1a1a;
-  --color-grey-9: #0d0d0d;
-
   // slate //
-  --color-slate-1: #F7FAFC;
-  --color-slate-2: #EDF2F7;
-  --color-slate-3: #E2E8F0;
-  --color-slate-4: #CBD5E0;
-  --color-slate-5: #A0AEC0;
-  --color-slate-6: #718096;
-  --color-slate-7: #4A5568;
-  --color-slate-8: #2D3748;
-  --color-slate-9: #1A202C;
+  --color-slate-100: #f1f5f9;
+  --color-slate-200: #e2e8f0;
+  --color-slate-300: #cbd5e1;
+  --color-slate-400: #95a3b8;
+  --color-slate-500: #64748b;
+  --color-slate-600: #475569;
+  --color-slate-700: #334155;
+  --color-slate-800: #1e293b;
+  --color-slate-900: #0f172a;
+
+  // stone //
+  --color-stone-100: #f5f5f4;
+  --color-stone-200: #e7e5e4;
+  --color-stone-300: #d6d3d1;
+  --color-stone-400: #a8a29e;
+  --color-stone-500: #78716c;
+  --color-stone-600: #57534e;
+  --color-stone-700: #44403c;
+  --color-stone-800: #292524;
+  --color-stone-900: #1c1917;
 
   // zinc //
-  --color-zinc-1: #F4F5F7;
-  --color-zinc-2: #E8E9EC;
-  --color-zinc-3: #DBDCDF;
-  --color-zinc-4: #CFCFD3;
-  --color-zinc-5: #B2B2B7;
-  --color-zinc-6: #95959B;
-  --color-zinc-7: #78787E;
-  --color-zinc-8: #5C5C62;
-  --color-zinc-9: #3F3F45;
+  --color-zinc-100: #f4f4f5;
+  --color-zinc-200: #e4e4e7;
+  --color-zinc-300: #d4d4d8;
+  --color-zinc-400: #a1a1aa;
+  --color-zinc-500: #71717a;
+  --color-zinc-600: #52525b;
+  --color-zinc-700: #3f3f46;
+  --color-zinc-800: #27272a;
+  --color-zinc-900: #18181b;
 
   // white and black //
   --color-white: #ffffff;
@@ -460,11 +460,11 @@ module.exports = {
         800: '${hslToHex(h + hr + factor * 3, s + sr / 1.75, l + lr / 1.75)}',
         900: '${hslToHex(h + hr + factor * 3, s + sr / 2, l + lr / 2)}'
       },
-      white: colors.white,
-      black: colors.black,
       slate: colors.slate,
+      stone: colors.stone,
       zinc: colors.zinc,
-      grey: colors.neutral,
+      black: colors.black,
+      white: colors.white,
       transparent: colors.transparent
     },
   },
