@@ -28,8 +28,7 @@ export default function Help() {
       <div className="text-lg leading-8 mt-8 mb-10">
         As a developer, the process of choosing website colors often poses
         challenges. To address this, I've developed a tool that adheres to the
-        color concept of
-        <a href="https://tailwindcss.com/docs/customizing-colors">Tailwind</a>,
+        color concept of <a href="https://tailwindcss.com/docs/customizing-colors">Tailwind</a>,
         while also generating an entire palette derived from a single base
         color. This tool conveniently produces both Tailwind and CSS code,
         making it adaptable for various projects. Above all, its user-friendly
