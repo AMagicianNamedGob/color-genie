@@ -4,40 +4,37 @@ export default function Help() {
       <h2 id="help" className="h1 text-center mt-24 mb-4">
         How Do I Use This?
       </h2>
-      <p className="text-lg leading-8 mt-8 mt:mb-10">
-        Simply enter a hex code in the input field and click the &apos;generate
-        code&apos; button. You can also use the paint brush button to open the
-        picker and select a color. The gear button is useful to to help zero in
-        the palette, especially if you select a very bright or very dark base
-        color. Once you&apos;ve generated a palette, you can copy the CSS code
-        to your clipboard and paste into you own stylesheet. The code generator
-        also includes a Tailwind toggle if you want to{" "}
+      <div className="text-lg leading-8 mt-8 mb-10">
+        Easily input a hexadecimal color code into the field and click the
+        'generate code' button. You can also utilize the paintbrush icon to
+        access the color picker and make your selection. The gear icon serves to
+        refine the palette, especially when dealing with intense bright or dark
+        base colors. After creating your palette, conveniently copy the CSS code
+        to your clipboard for seamless integration into your own stylesheet. For
+        users of Tailwind CSS, there's an option to
         <a href="https://tailwindcss.com/docs/customizing-colors#using-custom-colors">
-          use custom colors in your Tailwind config
+          incorporate custom colors into your Tailwind configuration
         </a>
         .
-      </p>
-      <p className="text-lg leading-8 mt-3">
-        Included in the generated code are several ranges in grey. All together
-        the generated code will create over 100 different options to use in your
-        next project. My suggestion is to pick two or three ranges plus one grey
-        range and stick to using those.
-      </p>
+      </div>
+      <div className="text-lg leading-8 mt-3">
+        The generated code includes a variety of grey ranges, to enhance your upcoming projects. To
+        streamline your approach, I recommend selecting two or three color
+        ranges in addition to a grey range to consistently apply across your
+        work.
+      </div>
 
       <h2 className="h1 text-center mt-24 mb-4">Why Is This?</h2>
-      <p className="text-lg leading-8 mt-8 mt:mb-10">
-        As a developer picking website colors can be quite a challenge, so I
-        decided to create a tool that uses the same color concept as{" "}
+      <div className="text-lg leading-8 mt-8 mb-10">
+        As a developer, the process of choosing website colors often poses
+        challenges. To address this, I've developed a tool that adheres to the
+        color concept of
         <a href="https://tailwindcss.com/docs/customizing-colors">Tailwind</a>,
-        but also generates an entire pallette from a single base color. It also
-        had to generate the code for both Tailwind and CSS so I could use it in
-        any project. Most importantly it had to be simple to use.
-      </p>
-      <p className="text-lg leading-8 mt-3">
-        I hope you find this tool useful. If you&apos;re curious to read a bit
-        more about how I built this, check out my{" "}
-        <a href="https://www.jaredmakes.com/blog/creating-a-simple-palette-generator">blog</a>.
-      </p>
+        while also generating an entire palette derived from a single base
+        color. This tool conveniently produces both Tailwind and CSS code,
+        making it adaptable for various projects. Above all, its user-friendly
+        design ensures effortless utilization.
+      </div>
     </>
   );
 }
