@@ -11,11 +11,7 @@ export default function Help() {
         refine the palette, especially when dealing with intense bright or dark
         base colors. After creating your palette, conveniently copy the CSS code
         to your clipboard for seamless integration into your own stylesheet. For
-        users of Tailwind CSS, there's an option to
-        <a href="https://tailwindcss.com/docs/customizing-colors#using-custom-colors">
-          incorporate custom colors into your Tailwind configuration
-        </a>
-        .
+        users of Tailwind CSS, there's an option to <a href="https://tailwindcss.com/docs/customizing-colors#using-custom-colors"> incorporate custom colors into your Tailwind configuration</a>.
       </div>
       <div className="text-lg leading-8 mt-3">
         The generated code includes a variety of grey ranges, to enhance your upcoming projects. To
@@ -28,7 +24,7 @@ export default function Help() {
       <div className="text-lg leading-8 mt-8 mb-10">
         As a developer, the process of choosing website colors often poses
         challenges. To address this, I've developed a tool that adheres to the
-        color concept of <a href="https://tailwindcss.com/docs/customizing-colors">Tailwind</a>,
+        color concept of <a href="https://tailwindcss.com/docs/customizing-colors"> Tailwind</a>,
         while also generating an entire palette derived from a single base
         color. This tool conveniently produces both Tailwind and CSS code,
         making it adaptable for various projects. Above all, its user-friendly
