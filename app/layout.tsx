@@ -8,6 +8,9 @@ const font = Maven_Pro({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Color Genius",
   description: "Generate a palette from one color. CSS and Tailwind supported.",
+  alternates: {
+    canonical: "https://www.colorgenius.tech/",
+  }
 };
 
 export default function RootLayout({
