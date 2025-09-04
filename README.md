@@ -1,6 +1,6 @@
 # Why Is This?
 
-https://colorgenius.tech
+https://color-genie.site
 
 As a developer picking website colors can be quite a challenge, so I decided to create a tool that uses the same color concept as [Tailwind](https://tailwindcss.com/docs/customizing-colors), but also generates an entire palette from a single base color. I also had to generate the code for both Tailwind and CSS so I could use it in multiple projects.
 

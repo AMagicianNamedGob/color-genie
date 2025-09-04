@@ -27,7 +27,7 @@ export default function Footer() {
         className="text-sm flex flex-row flex-wrap items-center justify-start gap-6"
       >
         <SocialLink
-          href="https://github.com//color-genie"
+          href="https://github.com/AMagicianNamedGob/color-genie"
           icon={GitHubIcon}
         >
           Find it on GitHub
