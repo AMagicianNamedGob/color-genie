@@ -27,7 +27,7 @@ export default function Footer() {
         className="text-sm flex flex-row flex-wrap items-center justify-start gap-6"
       >
         <SocialLink
-          href="https://github.com/TruJared/color-genius"
+          href="https://github.com//color-genie"
           icon={GitHubIcon}
         >
           Find it on GitHub
@@ -35,11 +35,11 @@ export default function Footer() {
         {/* <SocialLink href="#" icon={ThreadsIcon}>
         Trujared
       </SocialLink> */}
-        <SocialLink href="mailto:jared@jaredmakes.com" icon={MailIcon}>
-          Jared@jaredmakes.com
+        <SocialLink href="mailto:hello@jaredtruscott.com" icon={MailIcon}>
+          hello@jaredtruscott.com
         </SocialLink>
         <p className="md:ml-auto">
-          © {currentYear} <a href="https://jaredmakes.com">Jared Truscott</a>.
+          © {currentYear} <a href="https://jaredtruscott.com">Jared Truscott</a>.
           All rights reserved.
         </p>
       </ul>

@@ -27,7 +27,7 @@ export default function ThemeToggle() {
       <button
         className="relative w-14 h-14 flex justify-center items-center text-3xl border-2 border-zinc-500 shadow-inner shadow-white bg-gradient-to-br from-primary-900 to-secondary-100 p-2 hover:cursor-pointer hover:from-primary-100 hover:to-primary-900"
         onClick={(e) => handleClick(e)}
-        aria-hidden
+        title="Toggle Background"
       >
         <Image
           className="p-2"

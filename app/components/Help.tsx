@@ -11,7 +11,8 @@ export default function Help() {
         refine the palette, especially when dealing with intense bright or dark
         base colors. After creating your palette, conveniently copy the CSS code
         to your clipboard for seamless integration into your own stylesheet. For
-        users of Tailwind CSS, there's an option to <a href="https://tailwindcss.com/docs/customizing-colors#using-custom-colors"> incorporate custom colors into your Tailwind configuration</a>.
+        users of Tailwind CSS, there's an option to <a href="https://tailwindcss.com/docs/customizing-colors#using-custom-colors"> incorporate custom colors into your Tailwind configuration</a>. Slate, stone, and zinc grey ranges are
+        included to complement your generated colors.
       </div>
       <div className="text-lg leading-8 mt-3">
         The generated code includes a variety of grey ranges, to enhance your upcoming projects. To

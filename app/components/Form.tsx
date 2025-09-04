@@ -144,7 +144,7 @@ export default function Form() {
             onChange={setHexColorEffect}
             name="hexColor"
           />
-          <FormToggleButton active={false} icon={{ src: "icons/rando.svg" }} onClick={(e)=> randomize(e) } />
+            <FormToggleButton active={false} icon={{ src: "icons/rando.svg" }} onClick={(e) => randomize(e)} title="random" />
           </div>
           <div className="flex flex-row flex-wrap justify-start items-center w-full my-2 gap-2 lg:justify-between">
             <FormToggleButton
@@ -153,6 +153,7 @@ export default function Form() {
               icon={{
                 src: "icons/brush.svg",
               }}
+              title="color picker"
             />
             <FormToggleButton
               onClick={(e) => toggleSettings(e)}
@@ -160,6 +161,7 @@ export default function Form() {
               icon={{
                 src: "icons/cog.svg",
               }}
+              title="advanced settings"
             />
             <ThemeToggle />
             <FormToggleButton
@@ -171,6 +173,7 @@ export default function Form() {
               icon={{
                 src: "icons/question.svg",
               }}
+              title="help"
             />
 
             <input
